@@ -76,7 +76,7 @@ Se você deseja contribuir para o projeto, siga as diretrizes abaixo:
 
 O projeto foi desenvolvido pelos alunos do 3º ano sob a orientação dos professores responsáveis pelo projeto.
 
-- Aluno 1: [Bárbara Dapper](https://github.com/aluno1)
-- Aluno 2: [Bernardo Haisser](https://github.com/aluno2)
-- Aluno 3: [Gabriela Munari](https://github.com/aluno3)
+- Aluno 1: [Bárbara Dapper](https://github.com/barbaradasilvadapper)
+- Aluno 2: [Bernardo Haisser](https://github.com/Haisser-lab)
+- Aluno 3: [Gabriela Munari](https://github.com/Gabriela2010-g)
 - Aluno 4: [Julia Yume](https://github.com/juliayume)
