@@ -11,8 +11,9 @@ export const Fundo = styled.div`
 `
 
 export const ImagemCard = styled.img`
-    margin-right: 13%;
-    margin-top: 3%;
+    margin-right: 9%;
+    margin-top: 4%;
     margin-bottom: 1%;
     height: 80vh;
+
 `

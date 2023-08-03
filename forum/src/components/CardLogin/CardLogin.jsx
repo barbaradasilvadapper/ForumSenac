@@ -2,10 +2,10 @@ import styled from "styled-components"
 
 
 export const Container = styled.div`
-    background-color: #262D34;
+    background-color: #1E252B;
     min-width: 40%;
     padding: 2rem;
-    box-shadow: 5px 5px 15px #262D34;
+
 `
 
 export const TituloLogin = styled.h1`
@@ -24,4 +24,6 @@ export const BotaoEntrar = styled.button`
     font-size: 0.9rem;
     font-weight: 600;
     border-radius: 20px;
+    margin-top: 70%;
+    margin-left: 65%
 `
