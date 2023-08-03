@@ -1,12 +1,11 @@
-
-import Login from '../src/pages/Login/Login.js';
-import StyledGlobal from "./StyledGlobal"
+import StyledGlobal from "./StyledGlobal";
+import Home from "./pages/Home/Home";
 
 function App() {
   return (
     <>
-    <StyledGlobal/>
-      <Login/>
+      <StyledGlobal />
+      <Home />
     </>
   );
 }
