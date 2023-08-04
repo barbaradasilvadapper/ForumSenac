@@ -13,7 +13,6 @@ function Login(){
             <Fundo>
                 <ImagemCard src={imagemlogin} alt="monstrinho bravo"/>
                 <CardLogin>
-                    <input placeholder="Name"/>
                 </CardLogin>
             </Fundo>
         </>
