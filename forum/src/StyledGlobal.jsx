@@ -6,6 +6,8 @@ export default createGlobalStyle`
         padding: 0;
         box-sizing: 0;
         background: #1E252B;
+        font-family: 'Poppins', sans-serif;
+        color: white;
     }
 `
 
@@ -13,6 +15,6 @@ export const Grid = styled.div`
     display: grid;
     grid-template-areas: "header header"
                          "menu .";
-    grid-template-columns: 20% 80%;
-    grid-template-rows: 10vh;
+    grid-template-columns: 23% 77%;
+    grid-template-rows: 10.5vh;
 `
