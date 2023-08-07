@@ -1,10 +1,11 @@
 import { TabContainer } from "./StyledTab";
 
-function Tab() {
+function Tab(props) {
     return(
     <>
     <TabContainer>
-        {TabText}
+        {<img src={props.TabIcon}/>}
+        {props.TabText}
     </TabContainer>
     </>
     )

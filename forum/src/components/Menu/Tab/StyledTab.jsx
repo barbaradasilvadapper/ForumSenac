@@ -1,14 +1,17 @@
 import styled from "styled-components"
 
 export const TabContainer = styled.div`
-    height: 7vh;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
+    height: 6vh;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
     background-color: #262D34;
     font-size: 15px;
     display: flex;
     align-items: center;
     padding-left: 6vh;
+    color: white;
+    font-size: small;
+    gap: 2vh;
 
     &:hover,
     &:focus,

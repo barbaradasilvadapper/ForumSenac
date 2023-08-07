@@ -16,5 +16,5 @@ export const Grid = styled.div`
     grid-template-areas: "header header"
                          "menu .";
     grid-template-columns: 23% 77%;
-    grid-template-rows: 10.5vh;
+    grid-template-rows: 10.5vh 89.5vh;
 `
