@@ -22,6 +22,7 @@ export const AvatarContainer = styled.div`
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    background-color: #262D34;
 `
 
 export const Avatar = styled.img`
@@ -34,8 +35,10 @@ export const Avatar = styled.img`
     background-size: cover;
     background-repeat: no-repeat;
     margin-right: 1vh;
+    background-color: #262D34;
 `
 
 export const Icon = styled.span`
     color: #808080;
+    background-color: #262D34;
 `

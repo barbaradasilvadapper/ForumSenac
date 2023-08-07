@@ -4,7 +4,7 @@ function Tab(props) {
     return(
     <>
     <TabContainer>
-        {<img src={props.TabIcon}/>}
+        {<img src={props.TabIcon} backgroundColor="#262D34"/>}
         {props.TabText}
     </TabContainer>
     </>

@@ -8,14 +8,14 @@ function Header(){
         <HeaderContainer>
             <IconsContainer>
                 <Icon>
-                    <span class="material-symbols-outlined">add_box</span>
+                    <span class="material-symbols-outlined" backgroundColor="#262D34">add_box</span>
                 </Icon>
                 <Icon>
-                    <span class="material-symbols-outlined">notifications</span>
+                    <span class="material-symbols-outlined" backgroundColor="#262D34">notifications</span>
                 </Icon>
                 <AvatarContainer>
                     <Avatar src='https://bit.ly/dan-abramov'/>
-                    <ChevronDownIcon color='#808080'/>
+                    <ChevronDownIcon color='#808080' backgroundColor="#262D34"/>
                 </AvatarContainer>
             </IconsContainer>
         </HeaderContainer>
