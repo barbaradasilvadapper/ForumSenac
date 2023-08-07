@@ -16,3 +16,13 @@ export const ImagemCard = styled.img`
     margin-bottom: 1%;
     height: 80vh;
 `
+
+export const FazerCadastro = styled.h1`
+    font-weight: 900;
+    font-size: 17px;
+    color: #CCC8C8;
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+    background-color: #262D34;
+    padding-top: 1.8%;
+    margin-left: 78%;
+`

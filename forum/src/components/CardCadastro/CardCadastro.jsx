@@ -3,27 +3,32 @@ import styled from "styled-components"
 
 export const Container = styled.div`
     background-color: #1E252B;
-    min-width: 40%;
+    min-width: 45%;
     padding: 2rem;
+    margin-right: 2%;
 
 `
 
-export const Titulo = styled.h1`
-    font-weight: 600;
-    margin-top: 20%;
-    margin-left: 5%;
+export const TituloCadastro = styled.h1`
+    font-weight: 900;
+    font-size: 35px;
+    margin-top: 0%;
+    margin-left: -5%;
     position: relative;
-    color: #FFFFFF;
+    color: #CCC8C8;
     font-family: Poppins, Arial, Helvetica, sans-serif;
 `
 
-export const Botao = styled.button`
-    width: 27%;
-    background: #FF2377;
-    color: white;
-    font-size: 0.9rem;
-    font-weight: 600;
-    border-radius: 20px;
-    margin-top: 70%;
-    margin-left: 65%
+export const BotaoConfirmar = styled.button`
+    margin-top: 8%;
+    margin-left: 72%
+`
+export const SubtituloCadastro = styled.h1`
+    font-weight: 900;
+    font-size: 15px;
+    margin-top: 1.5%;
+    margin-left: -5%;
+    position: relative;
+    color: #CCC8C8;
+    font-family: Poppins, Arial, Helvetica, sans-serif;
 `

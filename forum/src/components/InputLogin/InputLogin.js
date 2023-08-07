@@ -2,43 +2,34 @@
 import { ChakraProvider } from '@chakra-ui/react'
 import {
     Input,
-    InputGroup,
-    InputLeftElement
+    InputGroup
   } from "@chakra-ui/input"
-import { InputStyle } from './InputLogin.jsx'
-import { InputStyle2 } from './InputLogin.jsx'
+import { InputUsuario, InputSenha } from './InputLogin.jsx'
+import { Checkbox } from '@chakra-ui/react'
+import { StyleCheckbox } from './InputLogin.jsx'
 
 
 function InputLogin(){
     return(
     <>
     <ChakraProvider>
-        <InputStyle>
+        <InputUsuario>
         <InputGroup>
-            <InputLeftElement
-            pointerEvents='none'
-            color='gray.300'
-            fontSize='1.2em'
-            children='@'
-            background='#262D34'
-            />
-            <Input variant='filled' placeholder='  Email or Username'/>
+            <Input background='#262D34' borderRadius='20' variant='filled' color='gray.300' placeholder='Email ou Nome de Usuário'/>
         </InputGroup>
-        </InputStyle>
+        </InputUsuario>
 
-        <InputStyle2>
+        <InputSenha>
         <InputGroup>
-            <InputLeftElement
-            pointerEvents='none'
-            color='gray.300'
-            fontSize='1.2em'
-            children='*'
-            background='#262D34'
-            />
-            <Input variant='filled' placeholder='  Password' />
+            <Input background='#262D34' borderRadius='20' variant='filled' color='gray.300' placeholder='Senha' />
         </InputGroup>
-        </InputStyle2>
+        </InputSenha>
+
+        <StyleCheckbox>
+        <Checkbox colorScheme='blue' defaultChecked>Lembre-se de mim</Checkbox>
+        </StyleCheckbox>
     </ChakraProvider>
+
     </>
     )
 }

@@ -2,14 +2,14 @@ import * as React from 'react'
 import { ChakraProvider } from '@chakra-ui/react'
 
 import StyledGlobal from "./StyledGlobal";
-import Login from "./pages/Login/Login";
+import Cadastro from './pages/Cadastro/Cadastro';
 
 function App() {
   return (
     <>
     <ChakraProvider>
       <StyledGlobal />
-      <Login/>
+      <Cadastro/>
     </ChakraProvider>
     </>
   );

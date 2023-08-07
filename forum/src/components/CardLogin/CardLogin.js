@@ -1,7 +1,7 @@
 import InputLogin from "../InputLogin/InputLogin.js"
 import { SubituloLogin } from "./CardLogin.jsx"
 import { BotaoEntrar, Container, TituloLogin } from "./CardLogin.jsx"
-
+import { Button } from '@chakra-ui/react'
 
 function CardLogin(){
     return(
@@ -15,7 +15,7 @@ function CardLogin(){
                 </SubituloLogin>
                 <InputLogin></InputLogin>
                 <BotaoEntrar>
-                    Entrar
+                    <Button borderRadius='20' colorScheme='pink' size='md' variant='solid'>  Entrar  </Button>
                 </BotaoEntrar>
             </Container>
         </>

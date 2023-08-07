@@ -20,15 +20,9 @@ export const TituloLogin = styled.h1`
 `
 
 export const BotaoEntrar = styled.button`
-    width: 22%;
-    height: 5vh;
-    background: #FF2377;
-    color: white;
-    font-size: 0.9rem;
-    font-weight: 600;
-    border-radius: 5px;
-    margin-top: 10%;
-    margin-left: 72%
+    margin-top: 6%;
+    margin-left: 80%
+    border: 1px solid white;
 `
 export const SubituloLogin = styled.h1`
     font-weight: 900;
