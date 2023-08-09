@@ -4,10 +4,7 @@ import {
     Input,
     InputGroup,
   } from "@chakra-ui/input"
-import { InputUsuario, InputSenha } from './InputCadastro.jsx'
-import { InputConfirmarSenha } from './InputCadastro.jsx'
-import { InputEmail } from './InputCadastro.jsx'
-import { InputNome } from './InputCadastro.jsx'
+import { InputStyle } from './InputCadastro.jsx'
 
 
 function InputCadastro(){
@@ -15,35 +12,35 @@ function InputCadastro(){
     <>
     <ChakraProvider>
 
-        <InputNome>
+        <InputStyle>
         <InputGroup>
-            <Input background='#262D34' borderRadius='20' variant='filled' color='gray.300' placeholder='Nome Completo'/>
+            <Input background='#262D34' borderRadius='20' border='#262D34' variant='outline' color='gray.300' placeholder='Nome Completo'/>
         </InputGroup>
-        </InputNome>
+        </InputStyle>
 
-        <InputUsuario>
+        <InputStyle>
         <InputGroup>
-            <Input background='#262D34' borderRadius='20' variant='filled' color='gray.300' placeholder='Nome de Usuário'/>
+            <Input background='#262D34' borderRadius='20' border='#262D34' variant='outline' color='gray.300' placeholder='Nome de Usuário'/>
         </InputGroup>
-        </InputUsuario>
+        </InputStyle>
 
-        <InputEmail>
+        <InputStyle>
         <InputGroup>
-            <Input background='#262D34' borderRadius='20' variant='filled' color='gray.300' placeholder='Email'/>
+            <Input background='#262D34' borderRadius='20' border='#262D34' variant='outline' color='gray.300' placeholder='Email'/>
         </InputGroup>
-        </InputEmail>
+        </InputStyle>
 
-        <InputSenha>
+        <InputStyle>
         <InputGroup>
-            <Input background='#262D34' borderRadius='20' hoover='#262D34' variant='filled' color='gray.300' placeholder='Senha' />
+            <Input background='#262D34' borderRadius='20' border='#262D34' variant='outline' color='gray.300' placeholder='Senha' />
         </InputGroup>
-        </InputSenha>
+        </InputStyle>
 
-        <InputConfirmarSenha>
+        <InputStyle>
         <InputGroup>
-            <Input background='#262D34' borderRadius='20' variant='filled' color='gray.300' placeholder='Confirmar Senha' />
+            <Input background='#262D34' borderRadius='20' border='#262D34' variant='outline' color='gray.300' placeholder='Confirmar Senha' />
         </InputGroup>
-        </InputConfirmarSenha>
+        </InputStyle>
     </ChakraProvider>
     </>
     )

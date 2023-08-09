@@ -15,13 +15,13 @@ function InputLogin(){
     <ChakraProvider>
         <InputUsuario>
         <InputGroup>
-            <Input background='#262D34' borderRadius='20' variant='filled' color='gray.300' placeholder='Email ou Nome de Usuário'/>
+            <Input background='#262D34' borderRadius='20' border='#262D34' variant='outline' color='gray.300' placeholder='Email ou Nome de Usuário'/>
         </InputGroup>
         </InputUsuario>
 
         <InputSenha>
         <InputGroup>
-            <Input background='#262D34' borderRadius='20' variant='filled' color='gray.300' placeholder='Senha' />
+            <Input background='#262D34' borderRadius='20' border='#262D34' variant='outline' color='gray.300' placeholder='Senha' />
         </InputGroup>
         </InputSenha>
 
