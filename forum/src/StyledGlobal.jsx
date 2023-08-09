@@ -5,7 +5,6 @@ export default createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: 0;
-        background: #1E252B;
         font-family: 'Poppins', sans-serif;
         color: white;
     }

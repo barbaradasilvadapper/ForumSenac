@@ -5,12 +5,13 @@ import MainDashboard from "../../components/MainDashboard/MainDashboard"
 import Menu from "../../components/Menu/Menu"
 import PageIntro from "../../components/PageIntroduction/PageIntro"
 import PostCard from "../../components/PostCard/PostCard"
-import { DisabledStatus, HomeGrid, PostContainer } from "./StyledHome"
+import { DisabledStatus, HomeContainer, HomeGrid, PostContainer } from "./StyledHome"
 import ProfilePhoto from "../assets/Monster.svg"
 
 function Home(){
     return(
         <>
+        <HomeContainer>
         <Grid>
             <Header />
             <Menu />
@@ -34,6 +35,7 @@ function Home(){
                 <DisabledStatus/>
             </HomeGrid>
         </Grid>
+        </HomeContainer>
         </>
     )
 }

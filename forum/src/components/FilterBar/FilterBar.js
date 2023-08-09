@@ -3,25 +3,38 @@ import RecentesIcon from "../assets/Recente.png"
 import TopIcon from "../assets/Top.png"
 import ResolvidosIcon from "../assets/Resolvidos.png"
 import SearchIcon from "../assets/Search.png"
+import React, { useState } from 'react';
+
 
 function FilterBar(){
-    return(
+    const [activeButtonIndex, setActiveButtonIndex] = useState(null);
+
+    const handleButtonClick = buttonIndex => {
+        setActiveButtonIndex(buttonIndex);
+    };
+
+    const buttons = [
+        { label: 'Recente', icon: RecentesIcon},
+        { label: 'Top', icon: TopIcon },
+        { label: 'Respondidos', icon: ResolvidosIcon },
+    ];
+
+    return (
         <>
         <FilterContainer>
             <FilterBarContainer>
-                <FixedFilter>
-                    <FilterIcons src={RecentesIcon}/>
-                    Recente
+                {buttons.map((button, index) => (
+                <FixedFilter
+                    key={index}
+                    label={button.label}
+                    onClick={() => handleButtonClick(index)}
+                    isActive={activeButtonIndex === index}
+                >
+                    <FilterIcons src={button.icon} />
+                    {button.label}
                 </FixedFilter>
-                <FixedFilter>
-                    <FilterIcons src={TopIcon}/>
-                    Top
-                </FixedFilter>
-                <FixedFilter>
-                    <FilterIcons src={ResolvidosIcon}/>
-                    Resolvidos
-                </FixedFilter>
-            </FilterBarContainer>   
+                ))}
+            </FilterBarContainer>
             <SearchContainer>
                     {/* <SearchIcons src={SearchIcon}/> */}
                     <input

@@ -31,9 +31,9 @@ export const FixedFilter = styled.div`
     &:hover {
         background-color: #333a41;
     }
-    &:active {
+    ${props => props.isActive &&`
         background-color: #1682FD;
-    }
+    `}
 `
 
 export const FilterIcons = styled.img`
