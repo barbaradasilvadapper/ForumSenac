@@ -17,6 +17,5 @@ export const TabContainer = styled.div`
     &:focus,
     &:active {
         background-color: #40454A;
-        color: ${props => props.activeTabColor};
     }
 `

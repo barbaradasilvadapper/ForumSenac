@@ -29,7 +29,7 @@ export const FixedFilter = styled.div`
     gap: 1vh;
 
     &:hover {
-        background-color: #333a41;
+        background-color:  ${props => (props.isActive ? '#1682FD' : '#333a41')};
     }
     ${props => props.isActive &&`
         background-color: #1682FD;

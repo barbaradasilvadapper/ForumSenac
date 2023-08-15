@@ -6,9 +6,18 @@ import Menu from "../../components/Menu/Menu"
 import PageIntro from "../../components/PageIntroduction/PageIntro"
 import PostCard from "../../components/PostCard/PostCard"
 import { DisabledStatus, HomeContainer, HomeGrid, PostContainer } from "./StyledHome"
+
+import RecentesIcon from "../assets/Recente.png"
+import TopIcon from "../assets/Top.png"
+import ResolvidosIcon from "../assets/Resolvidos.png"
 import ProfilePhoto from "../assets/Monster.svg"
 
 function Home(){
+    const buttons = [
+        { label: 'Recente', icon: RecentesIcon},
+        { label: 'Top', icon: TopIcon },
+        { label: 'Respondidos', icon: ResolvidosIcon },
+    ];
     return(
         <>
         <HomeContainer>
@@ -18,7 +27,7 @@ function Home(){
             <HomeGrid>
                 <PageIntro PageTitle="Desafios" PageSubtitle="Seja a voz da mudança e participe ativamente dos debates, sugerindo possíveis intervenções. O poder da transformação está em suas mãos!"/>
                 <MainDashboard />
-                <FilterBar />
+                <FilterBar buttons={buttons}/>
                 <DisabledStatus/>
                 <PostContainer>
                     <PostCard
