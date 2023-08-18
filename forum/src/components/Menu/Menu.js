@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom"
+
 import { MenuContainer, TabTitle } from "./Menu.jsx"
 import Tab from "./Tab/Tab.js"
 import DesafioIcon from "../assets/Desafios.png"
@@ -9,6 +11,27 @@ import LikesIcon from "../assets/Likes.png"
 import DashboardIcon from "../assets/Dashboard.png"
 
 function Menu(){
+    // const navigate = useNavigate()
+
+    // const goToChallenges = () => {
+    //     navigate('/home')
+    // }
+    // const goToTags = () => {
+    //     navigate('/tags')
+    // }
+    // const goToMyChallenges = () => {
+    //     navigate('/seus-desafios')
+    // }
+    // const goToMyProposals = () => {
+    //     navigate('/suas-propostas')
+    // }
+    // const goToLikes = () => {
+    //     navigate('/likes')
+    // }
+    // const goToDashboard = () => {
+    //     navigate('/dashboard')
+    // }
+
     return(
         <>
             <MenuContainer>

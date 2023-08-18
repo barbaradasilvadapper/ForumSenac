@@ -1,44 +1,35 @@
 import styled from "styled-components"
 
 export const PostCardContainer = styled.div`
-    background-color: #262D34;
-    border: 1px solid #262D34;
-    border-radius: 20px;
-    width: 40%;
+    width: 50%;
     height: fit-content;
-    margin-bottom: 3vh;
-    padding: 4vh;
+    gap: 5vh;
 `
 
 export const Column = styled.div`
     display: flex;
     flex-direction: column;
-    background-color: #262D34;
 `
 
 export const PostTitle = styled.p`
-    background-color: #262D34;
     font-style: bold;
-    font-size: small;
+    font-size: 10px;
     letter-spacing: 0.4px;
-    margin-top: 3vh;
+    margin-top: 1vh;
 `
 
 export const PostContent = styled.p`
-    background-color: #262D34;
     font-style: light;
-    font-size: 12px;
+    font-size: 8px;
     letter-spacing: 0.4px;
     color: #d3d3d3;
     margin-top: 1.5vh;
-    margin-bottom: 1.5vh;
+    margin-bottom: 2vh;
 `
 
 export const PostTagContainer = styled.div`
-    height: 30px;
-    background-color: #262D34;
+    height: 25px;
     display: inline-flex;
-    gap: 2vh;
 `
 
 export const PostTag = styled.div`
@@ -53,5 +44,5 @@ export const PostTag = styled.div`
     background-color: #51575D;
     border: 1px solid #51575D;
     border-radius: 5px;
-    font-size: smaller;
+    font-size: 10px;
 `

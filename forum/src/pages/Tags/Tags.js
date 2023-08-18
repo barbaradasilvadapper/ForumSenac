@@ -1,8 +1,5 @@
 import React from "react";
-import { Grid } from "../../StyledGlobal";
 
-import Header from "../../components/Header/Header";
-import Menu from "../../components/Menu/Menu";
 import PageIntro from "../../components/PageIntroduction/PageIntro";
 import FilterBar from "../../components/FilterBar/FilterBar";
 import { PostContainer, TagPageContainer, TagPageGrid } from "./StyledTags";
@@ -36,23 +33,10 @@ function Tags() {
         "Histórias inspiradoras de profissionais de diferentes origens sociais, a importância da representatividade e seus benefícios",
     },
   ];
-  
-  const breakIntoPairs = (array) => {
-    const result = [];
-    for (let i = 0; i < array.length; i += 2) {
-      result.push(array.slice(i, i + 2));
-    }
-    return result;
-  };
-
-  const pairs = breakIntoPairs(posts);
 
   return (
     <>
       <TagPageContainer>
-        <Grid>
-          <Header />
-          <Menu />
           <TagPageGrid>
             <PageIntro
               PageTitle="Tags"
@@ -60,16 +44,9 @@ function Tags() {
             />
             <FilterBar buttons={buttons} />
             <PostContainer>
-              {pairs.map((pair, index) => (
-                <div key={index}>
-                  {pair.map((post, innerIndex) => (
-                    <TagCard key={innerIndex} post={post.PostTag[]} post={post.PostTitle} post={post.PostContent}/>
-                  ))}
-                </div>
-              ))}
+                <TagCard posts={posts}/>
             </PostContainer>
           </TagPageGrid>
-        </Grid>
       </TagPageContainer>
     </>
   );

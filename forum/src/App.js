@@ -1,12 +1,20 @@
-import StyledGlobal from "./StyledGlobal";
-import Home from "./pages/Home/Home";
+import StyledGlobal, { Grid } from "./StyledGlobal";
+import Header from "./components/Header/Header";
+import Menu from "./components/Menu/Menu";
 import Tags from "./pages/Tags/Tags";
+import Home from "./pages/Home/Home";
+import CreatePost from "./pages/CreatePost/CreatePost";
+import Like from "./pages/Like/Like";
 
 function App() {
   return (
     <>
       <StyledGlobal />
-      <Tags />
+      <Grid>
+        <Header />
+        <Menu />
+        <Like />
+      </Grid>
     </>
   );
 }

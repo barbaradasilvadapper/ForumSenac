@@ -1,10 +1,10 @@
 import styled from "styled-components"
 
 export const TagPageContainer = styled.div`
+    grid-area: content;
     background-color: #1E252B;
     min-height: 100%;
     min-width: 100%;
-    grid-area: content;
 `
 
 export const TagPageGrid = styled.div`
@@ -19,12 +19,12 @@ export const TagPageGrid = styled.div`
 
 export const PostContainer = styled.div`
     grid-area: "post";
+    overflow: auto;
     width: 97%;
     margin-top: 5vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    overflow: auto;
     &::-webkit-scrollbar {
         width: 8px;
     }
