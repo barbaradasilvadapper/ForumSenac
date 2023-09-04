@@ -6,6 +6,7 @@ import Tags from "./pages/Tags/Tags";
 import Home from "./pages/Home/Home";
 import CreatePost from "./pages/CreatePost/CreatePost";
 import Like from "./pages/Like/Like";
+import Dashboard from "./pages/Dashboard/Dashboard";
 import Cadastro from './pages/Cadastro/Cadastro';
 
 function App() {
