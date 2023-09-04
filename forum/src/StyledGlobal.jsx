@@ -13,7 +13,8 @@ export default createGlobalStyle`
 export const Grid = styled.div`
     display: grid;
     grid-template-areas: "header header"
-                         "menu .";
+                         "menu content";
     grid-template-columns: 23% 77%;
     grid-template-rows: 10.5vh 89.5vh;
+    background-color: #1E252B;
 `

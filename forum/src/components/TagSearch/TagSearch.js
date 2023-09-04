@@ -6,9 +6,9 @@ import {
   PostTag,
   PostTagContainer,
   PostTitle,
-} from "./StyledTagCard";
+} from "./StyledTagSearch";
 
-function TagCard({ posts }) {
+function TagSearch({ posts }) {
 
   const novoPost = posts.map((post, index) =>{
     return(
@@ -17,7 +17,6 @@ function TagCard({ posts }) {
         <PostTagContainer>
                 <PostTag>{post.PostTag}</PostTag>
               </PostTagContainer>
-              <PostTitle>{post.PostTitle}</PostTitle>
               <PostContent>{post.PostContent}</PostContent>
         </Column>
       </PostCardContainer>
@@ -31,4 +30,4 @@ function TagCard({ posts }) {
   );
 }
 
-export default TagCard;
+export default TagSearch;
