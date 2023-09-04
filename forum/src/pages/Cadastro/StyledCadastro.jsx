@@ -17,13 +17,12 @@ export const ImagemCard = styled.img`
     height: 80vh;
 
 `
-
-export const FazerLogin = styled.h1`
-    font-weight: 900;
-    font-size: 17px;
+export const FazerLogin = styled.p`
+    font-size: smaller;
     color: #CCC8C8;
-    font-family: Poppins, Arial, Helvetica, sans-serif;
     background-color: #262D34;
-    padding-top: 1.8%;
-    margin-left: 80%;
+    display: flex;
+    align-items: center;
+    gap: 2vh;
+    padding-right: 6vh;
 `

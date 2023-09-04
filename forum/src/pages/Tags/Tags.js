@@ -8,6 +8,10 @@ import RecentesIcon from "../assets/Recente.png";
 import TopIcon from "../assets/Top.png";
 import TagCard from "../../components/TagCard/TagCard";
 
+import { Grid } from "../../StyledGlobal";
+import Header from "../../components/Header/Header";
+import Menu from "../../components/Menu/Menu";
+
 function Tags() {
   const buttons = [
     { label: 'Recente', icon: RecentesIcon },
@@ -36,6 +40,9 @@ function Tags() {
 
   return (
     <>
+    <Grid>
+    <Header />
+    <Menu />
       <TagPageContainer>
           <TagPageGrid>
             <PageIntro
@@ -48,6 +55,7 @@ function Tags() {
             </PostContainer>
           </TagPageGrid>
       </TagPageContainer>
+    </Grid>
     </>
   );
 }

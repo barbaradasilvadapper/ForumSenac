@@ -1,4 +1,4 @@
-import { HeaderContainer, Avatar, Icon, IconsContainer, AvatarContainer } from "./Header.jsx"
+import { HeaderContainer, Avatar, Icon, IconsContainer, AvatarContainer } from "./StyledHeader.jsx"
 import { ChevronDownIcon } from '@chakra-ui/icons'
 import 'material-symbols';
 

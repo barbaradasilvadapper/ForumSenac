@@ -1,24 +1,28 @@
-
-import { Fundo } from "./Cadastro.jsx"
 import imagemcadastro from "../../assets/imagemcadastro.png"
-import { ImagemCard } from "./Cadastro.jsx"
-import CardCadastro from "../../components/CardCadastro/CardCadastro.js"
-import { HeaderContainer } from "../../components/Header/Header.jsx"
-import { FazerLogin } from "./Cadastro.jsx"
+import LoginRegisterContent from "../../components/LoginRegisterContent/LoginRegisterContent"
+import { HeaderContainer } from "../../components/Header/StyledHeader"
+import { FazerLogin, Fundo, ImagemCard } from "./StyledCadastro"
 import { Button } from '@chakra-ui/react'
+import { Link } from "react-router-dom"
 
 
 function Cadastro(){
     return(
         <>
             <HeaderContainer>
-            <FazerLogin>Já possui conta?  <Button colorScheme='pink' variant='link'>  Login </Button> </FazerLogin>
+                <FazerLogin>Já possui conta?  
+                    <Button colorScheme='pink' variant='link' size="medium">
+                        <Link to="/Login">
+                            Faça seu Login
+                        </Link>
+                    </Button>
+                </FazerLogin>
             </HeaderContainer>
             <Fundo>
                 <ImagemCard src={imagemcadastro} alt="monstrinho cadastrando"/>
-                <CardCadastro>
+                <LoginRegisterContent PageName="Cadastro" PageButton="Cadastrar" PageContent="Seja bem vindo! Para desfrutar do fórum, crie sua conta:">
                     <input placeholder="Name"/>
-                </CardCadastro>
+                </LoginRegisterContent>
             </Fundo>
         </>
     )

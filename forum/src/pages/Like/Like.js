@@ -1,5 +1,5 @@
 import FilterBar from "../../components/FilterBar/FilterBar"
-import MainDashboard from "../../components/MainDashboard/MainDashboard"
+import CardProgress from "../../components/CardProgress/CardProgress"
 import PageIntro from "../../components/PageIntroduction/PageIntro"
 import PostCard from "../../components/PostCard/PostCard"
 import { DisabledStatus, LikeContainer, LikeGrid, PostContainer } from "./StyledLike"
@@ -8,6 +8,10 @@ import RecentesIcon from "../assets/Recente.png"
 import TopIcon from "../assets/Top.png"
 import ResolvidosIcon from "../assets/Resolvidos.png"
 import ProfilePhoto from "../assets/Monster.svg"
+
+import { Grid } from "../../StyledGlobal";
+import Header from "../../components/Header/Header";
+import Menu from "../../components/Menu/Menu";
 
 function Like(){
     const buttonsContent = [
@@ -40,13 +44,18 @@ function Like(){
 
     return(
     <>
+    <Grid>
+    <Header />
+    <Menu />
         <LikeContainer>
             <LikeGrid>
                 <PageIntro 
                     PageTitle="Likes" 
                     PageSubtitle="Relembre tudo aquilo que você curtiu na plataforma aqui!"
                 />
-                <MainDashboard />
+                <CardProgress 
+                    PostTitle="Resolvidos"
+                    PostContent="Percentual de interação em seus desafios"/>
                 <FilterBar buttons={buttonsContent}/>
                 <DisabledStatus/>
                 <PostContainer>
@@ -67,6 +76,7 @@ function Like(){
                 <DisabledStatus/>
             </LikeGrid>
         </LikeContainer>
+    </Grid>
     </>
     )
 }

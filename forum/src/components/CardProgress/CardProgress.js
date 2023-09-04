@@ -16,7 +16,7 @@ function CardProgress(props){
                 <PostContent>
                     {props.PostContent}
                 </PostContent>
-                <CircularProgress size='lg' value={65} color='purple' thickness='12px'>
+                <CircularProgress size='x-sm' value={65} color='purple' thickness='12px'>
                     <CircularProgressLabel>
                         <Porcentagem>65%</Porcentagem>
                         <DashboardContent>Do total de <br/> desafios</DashboardContent>

@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const HomeContainer = styled.div`
+export const MyPostsContainer = styled.div`
     background-color: #1E252B;
     min-height: 100%;
     min-width: 100%;
@@ -10,7 +10,7 @@ export const HomeContainer = styled.div`
     grid-area: content;
 `
 
-export const HomeGrid = styled.div`
+export const MyPostsGrid = styled.div`
     display: grid;
     grid-template-areas: "title status"
                          "filter ."

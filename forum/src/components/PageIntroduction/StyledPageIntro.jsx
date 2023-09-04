@@ -9,8 +9,10 @@ export const TitleContainer = styled.div`
     width: 80%;
 `
 
-export const PageTitle = styled.h2`
+export const PageTitle = styled.p`
     letter-spacing: 1px;
+    font-size: x-large;
+    font-weight: 600;
 `
 
 export const PageSubtitle = styled.p`

@@ -36,15 +36,15 @@ function Menu(){
         <>
             <MenuContainer>
                 <TabTitle>MENU</TabTitle>
-                <Tab TabIcon={DesafioIcon} TabText="Desafios"></Tab>
-                <Tab TabIcon={TagIcon} TabText="Tags"></Tab>
-                <Tab TabIcon={RankingIcon} TabText="Ranking"></Tab>
+                <Tab Path={"/"} TabIcon={DesafioIcon} TabText="Desafios"></Tab>
+                <Tab Path={"/Tags"} TabIcon={TagIcon} TabText="Tags"></Tab>
+                <Tab Path={"/"} TabIcon={RankingIcon} TabText="Ranking"></Tab>
                 
                 <TabTitle>NAVEGADOR PESSOAL</TabTitle>
-                <Tab TabIcon={SeusDesafiosIcon} TabText="Seus desafios"></Tab>
-                <Tab TabIcon={SuasRespostasIcon} TabText="Suas propostas"></Tab>
-                <Tab TabIcon={LikesIcon} TabText="Likes"></Tab>
-                <Tab TabIcon={DashboardIcon} TabText="Dashboard"></Tab>
+                <Tab Path={"/MyPosts"} TabIcon={SeusDesafiosIcon} TabText="Seus desafios"></Tab>
+                <Tab Path={"/MyAnswers"} TabIcon={SuasRespostasIcon} TabText="Suas propostas"></Tab>
+                <Tab Path={"/Like"} TabIcon={LikesIcon} TabText="Likes"></Tab>
+                <Tab Path={"/Dashboard"} TabIcon={DashboardIcon} TabText="Dashboard"></Tab>
             </MenuContainer>
         </>
     )

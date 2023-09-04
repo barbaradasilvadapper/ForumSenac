@@ -1,18 +1,12 @@
-
-import { ChakraProvider } from '@chakra-ui/react'
-import {
-    Input,
-    InputGroup
-  } from "@chakra-ui/input"
-import { InputUsuario, InputSenha } from './InputLogin.jsx'
+import { Input, InputGroup } from "@chakra-ui/input"
+import { InputUsuario, InputSenha, StyleCheckbox, InputContainer } from './StyledRegisterLoginInput'
 import { Checkbox } from '@chakra-ui/react'
-import { StyleCheckbox } from './InputLogin.jsx'
 
 
-function InputLogin(){
+function RegisterLoginInput(){
     return(
     <>
-    <ChakraProvider>
+    <InputContainer>
         <InputUsuario>
         <InputGroup>
             <Input background='#262D34' borderRadius='20' border='#262D34' variant='outline' color='gray.300' placeholder='Email ou Nome de Usuário'/>
@@ -26,12 +20,12 @@ function InputLogin(){
         </InputSenha>
 
         <StyleCheckbox>
-        <Checkbox colorScheme='blue' defaultChecked>Lembre-se de mim</Checkbox>
+            <Checkbox colorScheme='blue' defaultChecked>Lembre-se de mim</Checkbox>
         </StyleCheckbox>
-    </ChakraProvider>
+    </InputContainer>
 
     </>
     )
 }
 
-export default InputLogin
+export default RegisterLoginInput;

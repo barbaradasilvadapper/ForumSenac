@@ -1,10 +1,13 @@
 import { useNavigate } from "react-router-dom"
 
+import { Grid } from "../../StyledGlobal";
 import FilterBar from "../../components/FilterBar/FilterBar"
-import MainDashboard from "../../components/MainDashboard/MainDashboard"
+import CardProgress from "../../components/CardProgress/CardProgress"
 import PageIntro from "../../components/PageIntroduction/PageIntro"
 import PostCard from "../../components/PostCard/PostCard"
 import { DisabledStatus, HomeContainer, HomeGrid, PostContainer } from "./StyledHome"
+import Header from "../../components/Header/Header";
+import Menu from "../../components/Menu/Menu";
 
 import RecentesIcon from "../assets/Recente.png"
 import TopIcon from "../assets/Top.png"
@@ -44,10 +47,15 @@ function Home(){
 
     return(
         <>
+        <Grid>
+        <Header />
+        <Menu />
         <HomeContainer>
             <HomeGrid>
                 <PageIntro PageTitle="Desafios" PageSubtitle="Seja a voz da mudança e participe ativamente dos debates, sugerindo possíveis intervenções. O poder da transformação está em suas mãos!"/>
-                <MainDashboard />
+                <CardProgress 
+                    PostTitle="Resolvidos"
+                    PostContent="Percentual de interação em seus desafios"/>
                 <FilterBar buttons={buttons}/>
                 <DisabledStatus/>
                 <PostContainer>
@@ -68,6 +76,7 @@ function Home(){
                 <DisabledStatus/>
             </HomeGrid>
         </HomeContainer>
+        </Grid>
         </>
     )
 }

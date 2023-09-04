@@ -3,8 +3,11 @@ import PageIntro from "../../components/PageIntroduction/PageIntro";
 import StatIndicator from "../../components/StatIndicator/StatIndicator";
 import { ActivityContainer, DashboardContainer, DashboardGrid, GeneralIndicatorContainer, GeneralVisionContainer, MainIndicatorContainer, ScrollDiv, TooltipContainer, TooltipText } from "./StyledDashboard";
 
-import React, { useState } from 'react';
-import { ResponsiveContainer, ComposedChart, Line, Area, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import React from 'react';
+import { ResponsiveContainer, ComposedChart, Bar, XAxis, Tooltip } from 'recharts';
+import { Grid } from "../../StyledGlobal";
+import Header from "../../components/Header/Header";
+import Menu from "../../components/Menu/Menu";
 
 function Dashboard() {
     const statValues = [
@@ -63,6 +66,9 @@ function Dashboard() {
 
     return(
     <>
+    <Grid>
+    <Header />
+    <Menu />
     <DashboardContainer>
         <DashboardGrid>
             <PageIntro 
@@ -119,6 +125,7 @@ function Dashboard() {
             </ScrollDiv> 
         </DashboardGrid>
     </DashboardContainer>
+    </Grid>
     </>
     )
 };

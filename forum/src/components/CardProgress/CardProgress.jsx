@@ -4,9 +4,9 @@ export const PostCardContainer = styled.div`
     background-color: #262D34;
     border: 1px solid #262D34;
     border-radius: 20px;
-    width: 58%;
+    width: 75%;
     height: fit-content;
-    margin-top: 3vh;
+    margin-top: 11vh;
     padding: 4vh;
     margin-left: 4vh;
 `
@@ -49,8 +49,8 @@ export const Column = styled.div`
 
 export const PostTitle = styled.p`
     background-color: #262D34;
-    font-weight: 1000
-    font-size: small;
+    font-weight: 300;
+    font-size: medium;
     letter-spacing: 0.4px;
     margin-top: 1vh;
 `

@@ -3,8 +3,8 @@ import styled from "styled-components"
 
 export const Fundo = styled.div`
     background-color: #1E252B;
-    min-height: 100%;
-    min-width: 100%;
+    min-height: 90vh;
+    min-width: 100vh;
     display: flex;
     align-items: right;
     justify-content: right;
@@ -17,12 +17,12 @@ export const ImagemCard = styled.img`
     height: 80vh;
 `
 
-export const FazerCadastro = styled.h1`
-    font-weight: 900;
-    font-size: 17px;
+export const FazerCadastro = styled.p`
+    font-size: smaller;
     color: #CCC8C8;
-    font-family: Poppins, Arial, Helvetica, sans-serif;
     background-color: #262D34;
-    padding-top: 1.8%;
-    margin-left: 78%;
+    display: flex;
+    align-items: center;
+    gap: 2vh;
+    padding-right: 6vh;
 `
