@@ -1,10 +1,23 @@
-import { HeaderContainer, Avatar } from "./Header.jsx"
+import { HeaderContainer, Avatar, Icon, IconsContainer, AvatarContainer } from "./Header.jsx"
+import { ChevronDownIcon } from '@chakra-ui/icons'
+import 'material-symbols';
 
 function Header(){
     return(
         <>
         <HeaderContainer>
-            <Avatar src='https://bit.ly/dan-abramov'/>
+            <IconsContainer>
+                <Icon>
+                    <span class="material-symbols-outlined" backgroundColor="#262D34">add_box</span>
+                </Icon>
+                <Icon>
+                    <span class="material-symbols-outlined" backgroundColor="#262D34">notifications</span>
+                </Icon>
+                <AvatarContainer>
+                    <Avatar src='https://bit.ly/dan-abramov'/>
+                    <ChevronDownIcon color='#808080' backgroundColor="#262D34"/>
+                </AvatarContainer>
+            </IconsContainer>
         </HeaderContainer>
         </>
     )

@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const HomeContainer = styled.div`
+export const LikeContainer = styled.div`
     grid-area: content;
     background-color: #1E252B;
     min-height: 100%;
@@ -10,7 +10,7 @@ export const HomeContainer = styled.div`
     justify-content: right;
 `
 
-export const HomeGrid = styled.div`
+export const LikeGrid = styled.div`
     display: grid;
     grid-template-areas: "title status"
                          "filter ."

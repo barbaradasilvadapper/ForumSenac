@@ -1,23 +1,20 @@
-import { useNavigate } from "react-router-dom"
-
 import FilterBar from "../../components/FilterBar/FilterBar"
 import MainDashboard from "../../components/MainDashboard/MainDashboard"
 import PageIntro from "../../components/PageIntroduction/PageIntro"
 import PostCard from "../../components/PostCard/PostCard"
-import { DisabledStatus, HomeContainer, HomeGrid, PostContainer } from "./StyledHome"
+import { DisabledStatus, LikeContainer, LikeGrid, PostContainer } from "./StyledLike"
 
 import RecentesIcon from "../assets/Recente.png"
 import TopIcon from "../assets/Top.png"
 import ResolvidosIcon from "../assets/Resolvidos.png"
 import ProfilePhoto from "../assets/Monster.svg"
 
-function Home(){
-    const buttons = [
+function Like(){
+    const buttonsContent = [
         { label: 'Recente', icon: RecentesIcon},
         { label: 'Top', icon: TopIcon },
         { label: 'Respondidos', icon: ResolvidosIcon },
-    ];
-    
+    ]
     const postContent = [
         {
             UserPhoto: ProfilePhoto,
@@ -39,16 +36,18 @@ function Home(){
             PostTag2:"trabalho",
             PostTag3:"oportunidades",
         },
-    ];
-
+    ]
 
     return(
-        <>
-        <HomeContainer>
-            <HomeGrid>
-                <PageIntro PageTitle="Desafios" PageSubtitle="Seja a voz da mudança e participe ativamente dos debates, sugerindo possíveis intervenções. O poder da transformação está em suas mãos!"/>
+    <>
+        <LikeContainer>
+            <LikeGrid>
+                <PageIntro 
+                    PageTitle="Likes" 
+                    PageSubtitle="Relembre tudo aquilo que você curtiu na plataforma aqui!"
+                />
                 <MainDashboard />
-                <FilterBar buttons={buttons}/>
+                <FilterBar buttons={buttonsContent}/>
                 <DisabledStatus/>
                 <PostContainer>
                 {postContent.map((post, index) => (
@@ -66,10 +65,10 @@ function Home(){
                 ))}
                 </PostContainer>
                 <DisabledStatus/>
-            </HomeGrid>
-        </HomeContainer>
-        </>
+            </LikeGrid>
+        </LikeContainer>
+    </>
     )
 }
 
-export default Home
+export default Like;
