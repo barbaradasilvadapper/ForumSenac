@@ -11,18 +11,19 @@ export const Fundo = styled.div`
 `
 
 export const ImagemCard = styled.img`
-    margin-right: 13%;
-    margin-top: 3%;
+    margin-right: 9%;
+    margin-top: 4%;
     margin-bottom: 1%;
     height: 80vh;
+
 `
 
-export const FazerCadastro = styled.h1`
+export const FazerLogin = styled.h1`
     font-weight: 900;
     font-size: 17px;
     color: #CCC8C8;
     font-family: Poppins, Arial, Helvetica, sans-serif;
     background-color: #262D34;
     padding-top: 1.8%;
-    margin-left: 78%;
+    margin-left: 80%;
 `
