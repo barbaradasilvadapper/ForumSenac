@@ -5,6 +5,7 @@ import Tags from "./pages/Tags/Tags";
 import Home from "./pages/Home/Home";
 import CreatePost from "./pages/CreatePost/CreatePost";
 import Like from "./pages/Like/Like";
+import Dashboard from "./pages/Dashboard/Dashboard";
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
       <Grid>
         <Header />
         <Menu />
-        <Like />
+        <Dashboard />
       </Grid>
     </>
   );
