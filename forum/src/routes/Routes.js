@@ -10,6 +10,7 @@ import MyAnswers from "../pages/MyAnswers/MyAnswers"
 import Like from "../pages/Like/Like"
 import Ranking from "../pages/Ranking/Ranking"
 import CreatePost from "../pages/CreatePost/CreatePost"
+import Avatar from "../pages/Avatar/Avatar"
 
 function Rotas() {
 
@@ -26,6 +27,7 @@ function Rotas() {
                 <Route element={<Like/>} path="/Like"/>
                 <Route element={<Ranking/>} path="/Ranking"/>
                 <Route element={<CreatePost/>} path="/CreatePost"/>
+                <Route element={<Avatar/>} path="/Avatar"/>
             </Routes>
         </BrowserRouter>
     )

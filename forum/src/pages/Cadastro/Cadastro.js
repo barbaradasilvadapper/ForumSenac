@@ -1,10 +1,8 @@
 import imagemcadastro from "../../assets/imagemcadastro.png"
-import LoginRegisterContent from "../../components/LoginRegisterContent/LoginRegisterContent"
 import { HeaderContainer } from "../../components/Header/StyledHeader"
 import { FazerLogin, Fundo, ImagemCard } from "./StyledCadastro"
 import { Button } from '@chakra-ui/react'
 import { Link } from "react-router-dom"
-import InputCadastro from "../../components/InputCadastro/InputCadastro"
 import CardCadastro from "../../components/CardCadastro/CardCadastro"
 
 
@@ -14,7 +12,7 @@ function Cadastro(){
             <HeaderContainer>
                 <FazerLogin>Já possui conta?  
                     <Button colorScheme='pink' variant='link' size="medium">
-                        <Link to="/Home">
+                        <Link to="/">
                             Faça seu Login
                         </Link>
                     </Button>
