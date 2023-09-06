@@ -7,6 +7,7 @@ export const NewPostFiledContainer = styled.div`
     gap: 2vh;
     margin-left: 16vh;
     margin-right: 20vh;
+    font-size: small;
 `
 
 export const FieldTitle = styled.p`

@@ -55,7 +55,10 @@ function Like(){
                 />
                 <CardProgress 
                     PostTitle="Resolvidos"
-                    PostContent="Percentual de interação em seus desafios"/>
+                    PostContent="Percentual de interação em seus desafios"
+                    Percentage="65"
+                    ReportContent="Da total de desafios"
+                />
                 <FilterBar buttons={buttonsContent}/>
                 <DisabledStatus/>
                 <PostContainer>

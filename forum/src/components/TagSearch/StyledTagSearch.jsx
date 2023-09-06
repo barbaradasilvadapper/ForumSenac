@@ -1,35 +1,11 @@
 import styled from "styled-components"
 
 export const PostCardContainer = styled.div`
-    width: 50%;
-    height: fit-content;
-    gap: 5vh;
-`
-
-export const Column = styled.div`
-    display: flex;
-    flex-direction: column;
-`
-
-export const PostTitle = styled.p`
-    font-style: bold;
-    font-size: 10px;
-    letter-spacing: 0.4px;
-    margin-top: 1vh;
-`
-
-export const PostContent = styled.p`
-    font-style: light;
-    font-size: 8px;
-    letter-spacing: 0.4px;
-    color: #d3d3d3;
-    margin-top: 1.5vh;
-    margin-bottom: 2vh;
+    height: 7vh;
 `
 
 export const PostTagContainer = styled.div`
     height: 25px;
-    display: inline-flex;
 `
 
 export const PostTag = styled.div`

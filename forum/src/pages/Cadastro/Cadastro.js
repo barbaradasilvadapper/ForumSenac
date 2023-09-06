@@ -14,7 +14,7 @@ function Cadastro(){
             <HeaderContainer>
                 <FazerLogin>Já possui conta?  
                     <Button colorScheme='pink' variant='link' size="medium">
-                        <Link to="/Login">
+                        <Link to="/Home">
                             Faça seu Login
                         </Link>
                     </Button>

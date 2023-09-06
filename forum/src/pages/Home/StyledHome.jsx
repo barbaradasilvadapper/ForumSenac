@@ -24,12 +24,20 @@ export const PostContainer = styled.div`
     grid-area: post;
     margin-top: 5vh;
     overflow: auto;
+    &::-webkit-scrollbar-track {
+      border-radius: 0;
+      background-color: #D0D4CE;
+    }
+
     &::-webkit-scrollbar {
-        width: 8px;
+      width: 6px;
+      background-color: #D0D4CE;
     }
 
     &::-webkit-scrollbar-thumb {
-        width: 0px;
+      border-radius: 0;
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      background-color: #71806B;
     }
 `
 
