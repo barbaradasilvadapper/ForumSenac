@@ -21,6 +21,7 @@ function AddTagInput(){
             "Histórias inspiradoras de profissionais de diferentes origens sociais, a importância da representatividade e seus benefícios",
         },
     ];
+
     return(
     <>
     <Popover placement='top-start'>
@@ -39,6 +40,8 @@ function AddTagInput(){
             boxShadow: "5px 5px 20px 0px rgba(0, 0, 0, 0.192)",
             borderRadius: "10px",
             color: "#A1A4A7",
+            fontWeight: "300",
+            fontSize: "small"
         }}>
             Adicionar aqui
             <span color="#A1A4A7" class="material-symbols-outlined">add</span>
@@ -49,20 +52,24 @@ function AddTagInput(){
             backgroundColor: "#262d34eb",
             border: "1px solid #262d34eb",
             borderRadius: "10px",
-            padding: "4vh",
+            padding: "3vh",
             gap: "3vh",
-            width: "50vh",
+            width: "55vh",
             position: 'absolute',
             zIndex: '10',
         }}
     >
         <PopoverArrow />
-        <PopoverHeader>
-        <Stack spacing={2}>
+        <PopoverHeader
+            style={{
+                border: "none",
+            }}
+        >
+        <Stack>
             <InputGroup>
                 <InputLeftElement pointerEvents='none'
                 style={{
-                    padding: "8px",
+                    padding: "4px",
                     paddingLeft: "2vh"
                 }}>
                 <Search2Icon color='gray.500'/>
@@ -74,7 +81,7 @@ function AddTagInput(){
                         padding: "8px",
                         paddingLeft: "6vh",
                         boxSizing: "border-box",
-                        width: "90%",
+                        width: "100%",
                         height: "100%",
                         backgroundColor: "#1E252B",
                         border: "1px solid #1E252B",
@@ -83,29 +90,16 @@ function AddTagInput(){
                         color: "white",
                     }}
                 />
-                <PopoverCloseButton
-                    style={{
-                        backgroundColor: "#262d34be",
-                        border: "0px solid #262d34be",
-                    }}
-                >
-                    <InputRightElement>
-                        <CloseIcon
-                            style={{
-                                paddingTop: "1.5vh",
-                            }}
-                        />
-                    </InputRightElement>
-                </PopoverCloseButton>
             </InputGroup>
         </Stack>
         </PopoverHeader>
         <PopoverBody
             style={{
                 overflow: "auto",
-                height: "20vh",
                 display: "flex",
                 flexWrap: "wrap",
+                justifyContent: "space-between",
+                height: "15vh",
             }}
         >
             <TagSearch posts={TagList}/>

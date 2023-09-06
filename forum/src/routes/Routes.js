@@ -9,21 +9,23 @@ import MyPosts from "../pages/MyPosts/MyPosts"
 import MyAnswers from "../pages/MyAnswers/MyAnswers"
 import Like from "../pages/Like/Like"
 import Ranking from "../pages/Ranking/Ranking"
+import CreatePost from "../pages/CreatePost/CreatePost"
 
 function Rotas() {
 
     return (
         <BrowserRouter>
             <Routes>
-                <Route index element={<Login/>} path="/Login"/>
+                <Route index element={<Login/>} path="/"/>
                 <Route element={<Cadastro/>} path="/Cadastro"/>
-                <Route element={<Home/>} path="/"/>
+                <Route element={<Home/>} path="/Home"/>
                 <Route element={<Tags/>} path="/Tags"/>
                 <Route element={<Dashboard/>} path="/Dashboard"/>
                 <Route element={<MyPosts/>} path="/MyPosts"/>
                 <Route element={<MyAnswers/>} path="/MyAnswers"/>
                 <Route element={<Like/>} path="/Like"/>
                 <Route element={<Ranking/>} path="/Ranking"/>
+                <Route element={<CreatePost/>} path="/CreatePost"/>
             </Routes>
         </BrowserRouter>
     )

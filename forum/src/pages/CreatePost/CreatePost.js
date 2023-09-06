@@ -4,14 +4,25 @@ import PageIntro from "../../components/PageIntroduction/PageIntro";
 import NewPostFiled from "../../components/NewPostFiled/NewPostFiled";
 import AddTagInput from '../../components/AddTagInput/AddTagInput';
 
+import { Grid } from "../../StyledGlobal";
+import Header from "../../components/Header/Header";
+import Menu from "../../components/Menu/Menu";
+
+import { Link } from "react-router-dom";
+
 function CreatePost(){
     return(
     <>
+    <Grid>
+    <Header />
+    <Menu />
     <CreatePostContainer>
         <Inline>
-        <BackButton>
-            <BackIcon src={BackArrowIcon}/>
-        </BackButton>
+        <Link to="/Home">
+            <BackButton>
+                <BackIcon src={BackArrowIcon}/>
+            </BackButton>
+        </Link>
         <PageIntro
             PageTitle="Crie um desafio" 
             PageSubtitle="Seja a voz da mudança e crie novos debates. O poder da transformação da sua realidade ou da sua comunidade está em suas mãos!"
@@ -44,7 +55,7 @@ function CreatePost(){
             />
         </ScrollContainer>
     </CreatePostContainer>
-    
+    </Grid>
     </>
     )
 }
