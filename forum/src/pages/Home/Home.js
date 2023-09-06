@@ -15,6 +15,7 @@ import ResolvidosIcon from "../assets/Resolvidos.png"
 import ProfilePhoto from "../assets/Monster.svg"
 
 function Home(){
+
     const buttons = [
         { label: 'Recente', icon: RecentesIcon},
         { label: 'Top', icon: TopIcon },

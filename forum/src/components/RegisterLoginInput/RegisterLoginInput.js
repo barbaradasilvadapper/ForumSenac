@@ -13,8 +13,9 @@ function RegisterLoginInput(){
 
     const navigate = useNavigate()
 
-    const goToHome = () =>{
-        navigate("/Home")
+    const saveUserInfoLocalStorage = (token) => {
+        localStorage.setItem('token', token)
+        localStorage.setItem('email', email)
     }
 
     const handleSubmit = (e)=>{
@@ -29,7 +30,8 @@ function RegisterLoginInput(){
         })
         .then(response => {
             alert(response.data.message)
-            goToHome()
+            saveUserInfoLocalStorage(response.data.token)
+            navigate("/Home")
         })
         .catch(error => console.log(error))
     }

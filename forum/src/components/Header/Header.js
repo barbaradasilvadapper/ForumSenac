@@ -2,11 +2,13 @@ import { HeaderContainer, Avatar, Icon, IconsContainer, AvatarContainer } from "
 import { ChevronDownIcon } from '@chakra-ui/icons'
 import 'material-symbols';
 import { Link } from 'react-router-dom'
+import Logout from "../Logout/Logout.js";
 
 function Header(){
     return(
         <>
         <HeaderContainer>
+            <Logout/>
             <IconsContainer>
                 <Link to="/CreatePost">
                     <Icon>
