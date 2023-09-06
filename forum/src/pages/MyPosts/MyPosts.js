@@ -50,7 +50,10 @@ function MyPosts(){
                 <PageIntro PageTitle="Seus desafios" PageSubtitle="Questionar é o caminho mais rápido para o crescimento social e a descoberta de novas soluções que antes pareciam inalcançáveis!"/>
                 <CardProgress 
                     PostTitle="Resolvidos"
-                    PostContent="Percentual de interação em seus desafios"/>
+                    PostContent="Percentual de interação em seus desafios"
+                    Percentage="65"
+                    ReportContent="Do total de desafios"
+                />
                 <FilterBar buttons={buttons}/>
                 <DisabledStatus/>
                 <PostContainer>
