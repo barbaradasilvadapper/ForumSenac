@@ -8,6 +8,7 @@ import Dashboard from "../pages/Dashboard/Dashboard"
 import MyPosts from "../pages/MyPosts/MyPosts"
 import MyAnswers from "../pages/MyAnswers/MyAnswers"
 import Like from "../pages/Like/Like"
+import Ranking from "../pages/Ranking/Ranking"
 
 function Rotas() {
 
@@ -22,6 +23,7 @@ function Rotas() {
                 <Route element={<MyPosts/>} path="/MyPosts"/>
                 <Route element={<MyAnswers/>} path="/MyAnswers"/>
                 <Route element={<Like/>} path="/Like"/>
+                <Route element={<Ranking/>} path="/Ranking"/>
             </Routes>
         </BrowserRouter>
     )
