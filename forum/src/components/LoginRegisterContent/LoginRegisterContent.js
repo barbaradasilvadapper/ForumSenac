@@ -1,5 +1,5 @@
 import RegisterLoginInput from "../RegisterLoginInput/RegisterLoginInput"
-import { BotaoEntrar, Container, Titulo, Subitulo, CheckboxContent } from "./StyledLoginRegisterContent"
+import { BotaoEntrar, Container, Titulo, Subitulo, CheckboxContent } from "./StyledLoginRegisterContent.jsx"
 import { Link } from "react-router-dom"
 
 function LoginRegisterContent(props){

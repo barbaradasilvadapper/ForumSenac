@@ -38,6 +38,7 @@ function Menu(){
                 <TabTitle>MENU</TabTitle>
                 <Tab Path={"/Home"} TabIcon={DesafioIcon} TabText="Desafios"></Tab>
                 <Tab Path={"/Tags"} TabIcon={TagIcon} TabText="Tags"></Tab>
+                <Tab Path={"/Ranking"} TabIcon={RankingIcon} TabText="Ranking"></Tab>
                 <Tab Path={"/Home"} TabIcon={RankingIcon} TabText="Ranking"></Tab>
                 
                 <TabTitle>NAVEGADOR PESSOAL</TabTitle>

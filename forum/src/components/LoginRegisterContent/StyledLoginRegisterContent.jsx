@@ -18,15 +18,6 @@ export const Titulo = styled.h1`
     font-family: Poppins, Arial, Helvetica, sans-serif;
 `
 
-export const BotaoEntrar = styled.button`
-    margin-top: 6%;
-    margin-left: 70%;
-    font-weight: 300;
-    background-color: #FF2377;
-    padding: 1vh 3vh 1vh 3vh;
-    border: 0.1px solid #FF2377;
-    border-radius: 25px;
-`
 
 export const Subitulo = styled.h1`
     font-size: 15px;
@@ -35,4 +26,14 @@ export const Subitulo = styled.h1`
     position: relative;
     color: #CCC8C8;
     font-family: Poppins, Arial, Helvetica, sans-serif;
+`
+
+export const BotaoEntrar = styled.button`
+    margin-top: 6%;
+    margin-left: 70%;
+    font-weight: 300;
+    background-color: #FF2377;
+    padding: 1vh 3vh 1vh 3vh;
+    border: 0.1px solid #FF2377;
+    border-radius: 25px;
 `
