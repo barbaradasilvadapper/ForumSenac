@@ -14,7 +14,7 @@ function RegisterLoginInput(){
     const navigate = useNavigate()
 
     const goToHome = () =>{
-        navigate("/")
+        navigate("/Home")
     }
 
     const handleSubmit = (e)=>{

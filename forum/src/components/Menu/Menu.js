@@ -36,7 +36,7 @@ function Menu(){
         <>
             <MenuContainer>
                 <TabTitle>MENU</TabTitle>
-                <Tab Path={"/"} TabIcon={DesafioIcon} TabText="Desafios"></Tab>
+                <Tab Path={"/Home"} TabIcon={DesafioIcon} TabText="Desafios"></Tab>
                 <Tab Path={"/Tags"} TabIcon={TagIcon} TabText="Tags"></Tab>
                 <Tab Path={"/Ranking"} TabIcon={RankingIcon} TabText="Ranking"></Tab>
                 
