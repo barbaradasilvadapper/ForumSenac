@@ -1,11 +1,11 @@
 import { PostContainer } from "../../pages/Home/StyledHome";
-import { Avatar, Column, IdContainer, PostCardContainer, PostContent, PostTag, PostTagContainer, PostTitle, Time } from "./CardProgress.jsx"
+import { Column, PostCardContainer, PostContent, PostTitle } from "./CardProgress.jsx"
 import { CircularProgress, CircularProgressLabel } from '@chakra-ui/react'
 import { Porcentagem } from "./CardProgress.jsx";
 import { DashboardContent } from "./CardProgress.jsx";
 
 
-function CardProgress(props){
+function CardProgress( props ){
     return(
     <>
         <PostCardContainer>
@@ -17,9 +17,9 @@ function CardProgress(props){
                     {props.PostContent}
                 </PostContent>
                 <CircularProgress size='x-sm' value={65} color='purple' thickness='12px'>
-                    <CircularProgressLabel>
-                        <Porcentagem>65%</Porcentagem>
-                        <DashboardContent>Do total de <br/> desafios</DashboardContent>
+                    <CircularProgressLabel style={{display: "flex", alignItems: "center", flexDirection: "column"}}>
+                        <Porcentagem>{props.Percentage}%</Porcentagem>
+                        <DashboardContent>{props.ReportContent}</DashboardContent>
                     </CircularProgressLabel>
                 </CircularProgress>
             </Column>

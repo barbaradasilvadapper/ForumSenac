@@ -55,7 +55,10 @@ function Home(){
                 <PageIntro PageTitle="Desafios" PageSubtitle="Seja a voz da mudança e participe ativamente dos debates, sugerindo possíveis intervenções. O poder da transformação está em suas mãos!"/>
                 <CardProgress 
                     PostTitle="Resolvidos"
-                    PostContent="Percentual de interação em seus desafios"/>
+                    PostContent="Percentual de interação em seus desafios"
+                    Percentage="65"
+                    ReportContent="Da total de desafios"
+                />
                 <FilterBar buttons={buttons}/>
                 <DisabledStatus/>
                 <PostContainer>

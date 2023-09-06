@@ -27,8 +27,11 @@ function MyAnswers(){
             <HomeGrid>
                 <PageIntro PageTitle="Suas propostas" PageSubtitle="A cada proposta desvendamos um pouco mais o mistério que é a busca por intervenções que realizem uma verdadeira mudança em nossa sociedade!"/>
                 <CardProgress 
-                PostTitle="Resolvidos"
-                PostContent="Percentual de interação em seus desafios"/>
+                    PostTitle="Propostos"
+                    PostContent="Percentual de interação para propor soluções"
+                    Percentage="65"
+                    ReportContent="Do total de propostos"
+                />
                 <FilterBar buttons={buttons}/>
                 <DisabledStatus/>
                 <PostContainer>

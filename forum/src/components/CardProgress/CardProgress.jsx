@@ -11,36 +11,6 @@ export const PostCardContainer = styled.div`
     margin-left: 4vh;
 `
 
-export const IdContainer = styled.div`
-    display: inline-flex;
-    font-size: small;
-    background-color: #262D34;
-    gap: 1vh;
-`
-
-export const MoreInfo = styled.img`
-
-`
-
-export const Avatar = styled.img`
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 0px solid white;
-    background-position: center center;
-    background-size: contain;
-    background-size: cover;
-    background-repeat: no-repeat;
-    margin-right: 1vh;
-    background-color: #262D34;
-`
-
-export const Time = styled.p`
-    font-size: smaller;
-    color: #808080;
-    background-color: #262D34;
-`
-
 export const Column = styled.div`
     display: flex;
     flex-direction: column;
@@ -103,4 +73,5 @@ export const DashboardContent = styled.p`
     font-style: light;
     font-size: 8px;
     letter-spacing: 0.4px;
+    max-width: 10vh;
 `
