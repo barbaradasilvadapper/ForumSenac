@@ -14,7 +14,7 @@ function LoginRegisterContent(props){
                 </Subitulo>
                 <RegisterLoginInput/>
                 <BotaoEntrar borderRadius='20' size='md'>
-                    <Link to="/">{props.PageButton}</Link>
+                    <Link to="/Home">{props.PageButton}</Link>
                 </BotaoEntrar>
             </Container>
         </>

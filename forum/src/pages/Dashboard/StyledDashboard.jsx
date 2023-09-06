@@ -24,13 +24,23 @@ export const DashboardGrid = styled.div`
 export const ScrollDiv = styled.div`
     overflow: auto;
     height: 60vh;
-    &::-webkit-scrollbar {
-        width: 8px;
-    }
+    &::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: #D0D4CE;
+  }
 
-    &::-webkit-scrollbar-thumb {
-        width: 0px;
-    }
+  /* Estilos para a barra de rolagem */
+  &::-webkit-scrollbar {
+    width: 6px;
+    background-color: #D0D4CE;
+  }
+
+  /* Estilos para o thumb do scroll */
+  &::-webkit-scrollbar-thumb {
+    border-radius: 0;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #71806B;
+  }
 `
 
 export const MainIndicatorContainer = styled.div`
@@ -39,6 +49,7 @@ export const MainIndicatorContainer = styled.div`
     border: 1px solid #262D34;
     border-radius: 15px;
     height: 23vh;
+    width: 95%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -53,6 +64,7 @@ export const GeneralIndicatorContainer = styled.div`
     grid-template-areas: "general-vision activity";
     grid-template-columns: 57% 38%;
     height: 70vh;
+    width: 95%;
     gap: 7vh;
     margin-top: 5vh;
 `

@@ -5,6 +5,9 @@ export const TagPageContainer = styled.div`
     background-color: #1E252B;
     min-height: 100%;
     min-width: 100%;
+    display: flex;
+    align-items: right;
+    justify-content: right;
 `
 
 export const TagPageGrid = styled.div`
@@ -20,16 +23,27 @@ export const TagPageGrid = styled.div`
 export const PostContainer = styled.div`
     grid-area: "post";
     overflow: auto;
-    width: 97%;
+    width: 100%;
+    padding-right: 5vh;
     margin-top: 5vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    &::-webkit-scrollbar {
-        width: 8px;
-    }
+    &::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: #D0D4CE;
+  }
 
-    &::-webkit-scrollbar-thumb {
-        width: 0px;
-    }
+  /* Estilos para a barra de rolagem */
+  &::-webkit-scrollbar {
+    width: 6px;
+    background-color: #D0D4CE;
+  }
+
+  /* Estilos para o thumb do scroll */
+  &::-webkit-scrollbar-thumb {
+    border-radius: 0;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #71806B;
+  }
 `
