@@ -13,9 +13,6 @@ function RegisterLoginInput(){
 
     const navigate = useNavigate()
 
-    const goToHome = () =>{
-        navigate("/")
-    }
     const saveUserInfoLocalStorage = (token) => {
         localStorage.setItem('token', token)
         localStorage.setItem('email', email)
