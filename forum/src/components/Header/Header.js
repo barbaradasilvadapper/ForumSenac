@@ -3,11 +3,13 @@ import { ChevronDownIcon } from '@chakra-ui/icons'
 import { Menu, MenuButton, MenuList, MenuItem, IconButton } from '@chakra-ui/react'
 import 'material-symbols';
 import { Link } from 'react-router-dom'
+import Logout from "../Logout/Logout.js";
 
 function Header(){
     return(
         <>
         <HeaderContainer>
+            <Logout/>
             <IconsContainer>
                 <Link to="/CreatePost">
                     <Icon>

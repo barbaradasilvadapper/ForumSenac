@@ -16,7 +16,7 @@ function Rotas() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route index element={<Login/>} path="/"/>
+                <Route index element={<Login/>}/>
                 <Route element={<Cadastro/>} path="/Cadastro"/>
                 <Route element={<Home/>} path="/Home"/>
                 <Route element={<Tags/>} path="/Tags"/>

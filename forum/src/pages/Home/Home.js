@@ -15,6 +15,7 @@ import ProfilePhoto from "../assets/Monster.svg"
 import MonsterReport from "../../components/MonsterReport/MonterReport";
 
 function Home(){
+
     const buttons = [
         { label: 'Recente', icon: RecentesIcon},
         { label: 'Top', icon: TopIcon },
