@@ -24,12 +24,20 @@ export const DashboardGrid = styled.div`
 export const ScrollDiv = styled.div`
     overflow: auto;
     height: 60vh;
+    &::-webkit-scrollbar-track {
+      border-radius: 0;
+      background-color: #D0D4CE;
+    }
+
     &::-webkit-scrollbar {
-        width: 8px;
+      width: 6px;
+      background-color: #D0D4CE;
     }
 
     &::-webkit-scrollbar-thumb {
-        width: 0px;
+      border-radius: 0;
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      background-color: #71806B;
     }
 `
 
@@ -37,7 +45,7 @@ export const MainIndicatorContainer = styled.div`
     grid-area: "main-indicators";
     display: grid;
     grid-template-areas: "thrid first second";
-    grid-template-columns: 20% 22% 21%;
+    grid-template-columns: 20% 23% 21%;
     height: 40vh;
     justify-content: center;
     margin-top: 5vh;
@@ -78,6 +86,7 @@ export const ThirdContainer = styled.div`
     justify-content: center;
     height: 30vh;
     align-items: center;
+    width: 25vh;
 `
 
 export const SecondContainer = styled.div`
@@ -89,6 +98,7 @@ export const SecondContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     height: 35vh;
+    width: 25vh;
     align-items: center;
 `
 
@@ -101,6 +111,7 @@ export const FirstContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     height: 40vh;
+    width: 30vh;
     align-items: center;
 `
 
@@ -133,6 +144,7 @@ export const ActivityContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: small;
 `
 
 export const Tabela = styled.div`
@@ -140,7 +152,7 @@ export const Tabela = styled.div`
     flex-direction: row;
     align-items: center;
     justify-items: center;
-    margin-left: 5%;
+    margin-left: 4%;
 `
 
 export const TooltipContainer = styled.div`

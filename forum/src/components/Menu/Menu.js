@@ -39,12 +39,10 @@ function Menu(){
                 <Tab Path={"/Home"} TabIcon={DesafioIcon} TabText="Desafios"></Tab>
                 <Tab Path={"/Tags"} TabIcon={TagIcon} TabText="Tags"></Tab>
                 <Tab Path={"/Ranking"} TabIcon={RankingIcon} TabText="Ranking"></Tab>
-                <Tab Path={"/Home"} TabIcon={RankingIcon} TabText="Ranking"></Tab>
                 
                 <TabTitle>NAVEGADOR PESSOAL</TabTitle>
                 <Tab Path={"/MyPosts"} TabIcon={SeusDesafiosIcon} TabText="Seus desafios"></Tab>
                 <Tab Path={"/MyAnswers"} TabIcon={SuasRespostasIcon} TabText="Suas propostas"></Tab>
-                <Tab Path={"/Like"} TabIcon={LikesIcon} TabText="Likes"></Tab>
                 <Tab Path={"/Dashboard"} TabIcon={DashboardIcon} TabText="Dashboard"></Tab>
             </MenuContainer>
         </>

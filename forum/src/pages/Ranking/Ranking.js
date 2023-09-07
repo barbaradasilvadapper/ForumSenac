@@ -2,15 +2,12 @@ import DateSelector from "../../components/DateSelector/DateSelector";
 import PageIntro from "../../components/PageIntroduction/PageIntro";
 import RankingInfo from "../../components/RankingInfo/RankingInfo";
 import TabelaRanking from "../../components/TabelaRanking/TabelaRanking";
-import StatIndicator from "../../components/StatIndicator/StatIndicator";
 import { ActivityContainer, DashboardContainer, Avatar1, Avatar2, Avatar3, ThirdContainer, FirstContainer, SecondContainer, DashboardGrid, GeneralIndicatorContainer, GeneralVisionContainer, MainIndicatorContainer, ScrollDiv, TooltipContainer, TooltipText, Tabela } from "./Ranking.jsx";
 
 import React from 'react';
-import { ResponsiveContainer, ComposedChart, Bar, XAxis, Tooltip } from 'recharts';
 import { Grid } from "../../StyledGlobal";
 import Header from "../../components/Header/Header";
 import Menu from "../../components/Menu/Menu";
-import imagemlogin from "../../assets/imagemlogin.png"
 
 
 function Ranking() {
@@ -29,7 +26,7 @@ function Ranking() {
             <DateSelector/>
             <ScrollDiv>           
             <MainIndicatorContainer>
-             <ThirdContainer> <Avatar3 src={'https://bit.ly/dan-abramov'}/> <RankingInfo Username="Jacob Jones" Points="1674"/> </ThirdContainer>
+                <ThirdContainer> <Avatar3 src={'https://bit.ly/dan-abramov'}/> <RankingInfo Username="Jacob Jones" Points="1674"/> </ThirdContainer>
                 <FirstContainer> <Avatar1 src={'https://bit.ly/dan-abramov'}/> <RankingInfo Username="Jenny Wilson" Points="2560"/> </FirstContainer>
                 <SecondContainer> <Avatar2 src={'https://bit.ly/dan-abramov'}/> <RankingInfo Username="Robert Fox" Points="1891"/> </SecondContainer>
             </MainIndicatorContainer>

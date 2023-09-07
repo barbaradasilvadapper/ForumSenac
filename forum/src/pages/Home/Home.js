@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom"
 
 import { Grid } from "../../StyledGlobal";
 import FilterBar from "../../components/FilterBar/FilterBar"
-import CardProgress from "../../components/CardProgress/CardProgress"
 import PageIntro from "../../components/PageIntroduction/PageIntro"
 import PostCard from "../../components/PostCard/PostCard"
 import { DisabledStatus, HomeContainer, HomeGrid, PostContainer } from "./StyledHome"
@@ -13,6 +12,7 @@ import RecentesIcon from "../assets/Recente.png"
 import TopIcon from "../assets/Top.png"
 import ResolvidosIcon from "../assets/Resolvidos.png"
 import ProfilePhoto from "../assets/Monster.svg"
+import MonsterReport from "../../components/MonsterReport/MonterReport";
 
 function Home(){
     const buttons = [
@@ -53,11 +53,9 @@ function Home(){
         <HomeContainer>
             <HomeGrid>
                 <PageIntro PageTitle="Desafios" PageSubtitle="Seja a voz da mudança e participe ativamente dos debates, sugerindo possíveis intervenções. O poder da transformação está em suas mãos!"/>
-                <CardProgress 
-                    PostTitle="Resolvidos"
-                    PostContent="Percentual de interação em seus desafios"
-                    Percentage="65"
-                    ReportContent="Da total de desafios"
+                <MonsterReport 
+                    PostTitle="Continue assim!"
+                    Percentage={65}
                 />
                 <FilterBar buttons={buttons}/>
                 <DisabledStatus/>

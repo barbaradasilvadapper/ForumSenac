@@ -1,4 +1,4 @@
-import LoginRegisterContent from "../../components/LoginRegisterContent/LoginRegisterContent"
+// import LoginRegisterContent from "../../components/LoginRegisterContent/LoginRegisterContent"
 import imagemlogin from "../../assets/imagemlogin.png"
 import { HeaderContainer } from "../../components/Header/StyledHeader"
 import { FazerCadastro, ImagemCard, Fundo } from "./StyledLogin"
@@ -20,7 +20,7 @@ function Login(){
             </HeaderContainer>
             <Fundo>
                 <ImagemCard src={imagemlogin} alt="monstrinho bravo"/>
-                <LoginRegisterContent PageName="Login" PageButton="Entrar" PageContent="Bem vindo de volta! Insira seu login para entrar em sua conta:"/>
+                {/* <LoginRegisterContent PageName="Login" PageButton="Entrar" PageContent="Bem vindo de volta! Insira seu login para entrar em sua conta:"/> */}
             </Fundo>
         </>
     )
