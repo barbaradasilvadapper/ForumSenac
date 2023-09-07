@@ -1,5 +1,4 @@
 import FilterBar from "../../components/FilterBar/FilterBar"
-import CardProgress from "../../components/CardProgress/CardProgress"
 import PageIntro from "../../components/PageIntroduction/PageIntro"
 import PostCard from "../../components/PostCard/PostCard"
 import { DisabledStatus, LikeContainer, LikeGrid, PostContainer } from "./StyledLike"
@@ -12,6 +11,7 @@ import ProfilePhoto from "../assets/Monster.svg"
 import { Grid } from "../../StyledGlobal";
 import Header from "../../components/Header/Header";
 import Menu from "../../components/Menu/Menu";
+import MonsterReport from "../../components/MonsterReport/MonterReport"
 
 function Like(){
     const buttonsContent = [
@@ -53,11 +53,9 @@ function Like(){
                     PageTitle="Likes" 
                     PageSubtitle="Relembre tudo aquilo que você curtiu na plataforma aqui!"
                 />
-                <CardProgress 
-                    PostTitle="Resolvidos"
-                    PostContent="Percentual de interação em seus desafios"
-                    Percentage="65"
-                    ReportContent="Da total de desafios"
+                <MonsterReport 
+                    PostTitle="Continue assim!"
+                    Percentage={65}
                 />
                 <FilterBar buttons={buttonsContent}/>
                 <DisabledStatus/>
