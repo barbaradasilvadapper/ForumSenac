@@ -3,11 +3,17 @@ import { Input, Stack, InputGroup, InputLeftElement } from '@chakra-ui/react'
 import { Search2Icon } from '@chakra-ui/icons'
 import React, { useState } from 'react';
 
-function FilterBar({ buttons }){
+function FilterBar({ buttons, onSearchChange }){
     const [activeButtonIndex, setActiveButtonIndex] = useState(null);
+    const [searched, setSearched] = useState('');
 
     const handleButtonClick = buttonIndex => {
         setActiveButtonIndex(buttonIndex);
+    };
+
+    const handleSearchChange = (value) => {
+        setSearched(value);
+        onSearchChange(value);
     };
 
     return (
@@ -37,8 +43,10 @@ function FilterBar({ buttons }){
                         <Search2Icon color='gray.500'/>
                         </InputLeftElement>
                         <Input
+                            value={searched}
+                            onChange={(e) => handleSearchChange(e.target.value)}
                             type="text"
-                            placeholder="Pesquise por palavras-chave"
+                            placeholder="Pesquise pelo título"
                             style={{
                                 padding: "8px",
                                 paddingLeft: "6vh",

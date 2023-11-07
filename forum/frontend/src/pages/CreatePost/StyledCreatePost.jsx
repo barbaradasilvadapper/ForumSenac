@@ -89,3 +89,13 @@ export const ImageInput = styled.input`
     padding-left: 2vh;
     color: #ffffff81;
 `
+
+export const SubmitButton = styled.button`
+    margin-top: 6%;
+    margin-left: 70%;
+    font-size: smaller;
+    background-color: #FF2377;
+    padding: 1vh 2vh 1vh 2vh;
+    border: 0.1px solid #FF2377;
+    border-radius: 25px;
+`

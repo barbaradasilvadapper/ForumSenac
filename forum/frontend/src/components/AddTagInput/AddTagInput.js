@@ -1,26 +1,31 @@
 import { Popover, PopoverTrigger, PopoverContent, PopoverHeader, PopoverBody, PopoverFooter, PopoverArrow, PopoverCloseButton, Button, InputRightElement, position } from '@chakra-ui/react'
 import { Input, Stack, InputGroup, InputLeftElement } from '@chakra-ui/react'
-import { Search2Icon, CloseIcon } from '@chakra-ui/icons'
-import TagSearch from '../../components/TagSearch/TagSearch';
+import { Search2Icon, CloseIcon } from '@chakra-ui/icons';
+import { useEffect, useState } from 'react';
+import { api } from '../../services/api';
+import { PostCardContainer, PostTag, PostTagContainer } from './StyledAddInput';
 
-function AddTagInput(){
-    const TagList = [
-        {
-          PostTag: "#RelatosSãoLeopoldo",
-          PostContent:
-            "Histórias inspiradoras de profissionais de diferentes origens sociais, a importância da representatividade e seus benefícios",
-        },
-        {
-          PostTag: "#RelatosSãoLeopoldo",
-          PostContent:
-            "Histórias inspiradoras de profissionais de diferentes origens sociais, a importância da representatividade e seus benefícios",
-        },
-        {
-          PostTag: "#RelatosSãoLeopoldo",
-          PostContent:
-            "Histórias inspiradoras de profissionais de diferentes origens sociais, a importância da representatividade e seus benefícios",
-        },
-    ];
+function AddTagInput( props ){
+    const [tags, setTags] = useState([]);
+    const [field, setField] = useState('');
+    localStorage.setItem(`${props.TagNumber}`, field);
+
+    const handleTagClick = (tagName) => {
+        setField(tagName);
+    };
+
+    useEffect(() => {
+      const fetchData = async () => {
+          try {
+              const response = await api.get('/tag/tag');
+              const tagList = response.data.data;
+              setTags(tagList);
+          } catch (err) {
+              console.error(err);
+          }
+      };
+      fetchData();
+    }, []);
 
     return(
     <>
@@ -43,7 +48,7 @@ function AddTagInput(){
             fontWeight: "300",
             fontSize: "small"
         }}>
-            Adicionar aqui
+            {field === '' ? 'Adicionar aqui' : field}
             <span color="#A1A4A7" class="material-symbols-outlined">add</span>
         </Button>
     </PopoverTrigger>
@@ -99,10 +104,16 @@ function AddTagInput(){
                 display: "flex",
                 flexWrap: "wrap",
                 justifyContent: "space-between",
-                height: "15vh",
+                height: "15vh"
             }}
         >
-            <TagSearch posts={TagList}/>
+        {tags.map((tag) => (
+            <PostCardContainer key={tag.TagID}>
+                <PostTagContainer>
+                <PostTag onClick={() => handleTagClick(tag.TagName)}>{tag.TagName}</PostTag>
+                </PostTagContainer>
+            </PostCardContainer>
+        ))}
         </PopoverBody>
     </PopoverContent>
     </Popover>

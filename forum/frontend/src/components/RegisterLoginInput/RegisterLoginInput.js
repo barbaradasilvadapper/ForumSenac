@@ -2,12 +2,8 @@ import { Input, InputGroup } from "@chakra-ui/input"
 import { InputUsuario, InputSenha, StyleCheckbox, InputContainer, BotaoEntrar } from './StyledRegisterLoginInput'
 import { Checkbox } from '@chakra-ui/react'
 import { useState } from "react"
-
-
 import { useNavigate } from "react-router-dom";
-import { baseUrl } from "../../services/api";
-import axios from "axios";
-
+import { api, baseUrl } from "../../services/api";
 
 function RegisterLoginInput(){
 
@@ -21,10 +17,10 @@ function RegisterLoginInput(){
         navigate('/home')
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
-        axios.post(`${baseUrl}/auth/login`, formData)
+        await api.post(`/auth/login`, formData)
             .then(function (response) {
                 console.log(response)
                 localStorage.setItem('user', response.data.data[0].id)

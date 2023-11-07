@@ -11,39 +11,37 @@ import Menu from "../../components/Menu/Menu";
 import RecentesIcon from "../assets/Recente.png"
 import TopIcon from "../assets/Top.png"
 import ResolvidosIcon from "../assets/Resolvidos.png"
-import ProfilePhoto from "../assets/Monster.svg"
 import MonsterReport from "../../components/MonsterReport/MonterReport";
+import { useEffect, useState } from "react";
+import { api } from "../../services/api";
 
 function Home(){
 
     const buttons = [
         { label: 'Recente', icon: RecentesIcon},
-        { label: 'Top', icon: TopIcon },
-        { label: 'Respondidos', icon: ResolvidosIcon },
+        // { label: 'Top', icon: TopIcon },
+        // { label: 'Respondidos', icon: ResolvidosIcon },
     ];
-    
-    const postContent = [
-        {
-            UserPhoto: ProfilePhoto,
-            Username: "Julia Yume",
-            TimePosted:"5 min",
-            PostTitle:"O papel das políticas públicas e da legislação trabalhista na diversidade e inclusão:",
-            PostContent:"Quais medidas podem ser implementadas para incentivar a inclusão de trabalhadores marginalizados no mercado de trabalho e garantir a igualdade de oportunidades?",
-            PostTag1:"políticas",
-            PostTag2:"trabalho",
-            PostTag3:"oportunidades",
-        },
-        {
-            UserPhoto: ProfilePhoto,
-            Username: "Julia Yume",
-            TimePosted:"5 min",
-            PostTitle:"O papel das políticas públicas e da legislação trabalhista na diversidade e inclusão:",
-            PostContent:"Quais medidas podem ser implementadas para incentivar a inclusão de trabalhadores marginalizados no mercado de trabalho e garantir a igualdade de oportunidades?",
-            PostTag1:"políticas",
-            PostTag2:"trabalho",
-            PostTag3:"oportunidades",
-        },
-    ];
+
+    const [posts, setPosts] = useState([]);
+    const [searched, setSearched] = useState('');
+
+    const handleSearchChange = (value) => {
+        setSearched(value);
+    };
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await api.get('/post/post');
+                const postList = response.data.data;
+                setPosts(postList);
+            } catch (err) {
+                console.error(err);
+            }
+        };
+        fetchData();
+    }, []);
 
 
     return(
@@ -58,23 +56,43 @@ function Home(){
                     PostTitle="Continue assim!"
                     Percentage={65}
                 />
-                <FilterBar buttons={buttons}/>
+                <FilterBar buttons={buttons} onSearchChange={handleSearchChange}/>
                 <DisabledStatus/>
+                {searched !== '' ? (
                 <PostContainer>
-                {postContent.map((post, index) => (
-                    <PostCard 
-                        key={index}
-                        UserPhoto={post.UserPhoto}
-                        Username={post.Username}
-                        TimePosted={post.TimePosted}
-                        PostTitle={post.PostTitle}
-                        PostContent={post.PostContent}
-                        PostTag1={post.PostTag1}
-                        PostTag2={post.PostTag2}
-                        PostTag3={post.PostTag3}
-                    />
-                ))}
+                    {posts
+                    .filter((post) => post.PostName.toLowerCase().includes(searched.toLowerCase()))
+                    .map((post) => (
+                        <PostCard 
+                            key={post.PostID}
+                            UserPhoto={post.UserPhoto}
+                            Username={post.UserName}
+                            TimePosted={`Há ${post.PublishedTime}`}
+                            PostTitle={post.PostName}
+                            PostContent={post.PostDescription}
+                            PostTag1={post.TagName1}
+                            PostTag2={post.TagName2}
+                            PostTag3={post.TagName3}
+                        />
+                    ))}
                 </PostContainer>
+                ) : (
+                <PostContainer>
+                    {posts.map((post) => (
+                        <PostCard 
+                            key={post.PostID}
+                            UserPhoto={post.UserPhoto}
+                            Username={post.UserName}
+                            TimePosted={`Há ${post.PublishedTime}`}
+                            PostTitle={post.PostName}
+                            PostContent={post.PostDescription}
+                            PostTag1={post.TagName1}
+                            PostTag2={post.TagName2}
+                            PostTag3={post.TagName3}
+                        />
+                    ))}
+                </PostContainer>
+                )}
                 <DisabledStatus/>
             </HomeGrid>
         </HomeContainer>

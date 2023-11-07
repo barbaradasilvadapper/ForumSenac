@@ -1,42 +1,41 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import PageIntro from "../../components/PageIntroduction/PageIntro";
 import FilterBar from "../../components/FilterBar/FilterBar";
-import { PostContainer, TagPageContainer, TagPageGrid } from "./StyledTags";
+import { Column, PostCardContainer, PostContainer, PostContent, PostTag, PostTagContainer, PostTitle, TagPageContainer, TagPageGrid } from "./StyledTags";
 
 import RecentesIcon from "../assets/Recente.png";
-import TopIcon from "../assets/Top.png";
-import TagCard from "../../components/TagCard/TagCard";
 
 import { Grid } from "../../StyledGlobal";
 import Header from "../../components/Header/Header";
 import Menu from "../../components/Menu/Menu";
+import { api } from "../../services/api";
 
 function Tags() {
   const buttons = [
     { label: 'Recente', icon: RecentesIcon },
-    { label: 'Top', icon: TopIcon },
+    // { label: 'Top', icon: TopIcon },
   ];
-  const posts = [
-    {
-      PostTag: "#RelatosSãoLeopoldo",
-      PostTitle: "relatos",
-      PostContent:
-        "Histórias inspiradoras de profissionais de diferentes origens sociais, a importância da representatividade e seus benefícios",
-    },
-    {
-      PostTag: "#RelatosSãoLeopoldo",
-      PostTitle: "relatos",
-      PostContent:
-        "Histórias inspiradoras de profissionais de diferentes origens sociais, a importância da representatividade e seus benefícios",
-    },
-    {
-      PostTag: "#RelatosSãoLeopoldo",
-      PostTitle: "relatos",
-      PostContent:
-        "Histórias inspiradoras de profissionais de diferentes origens sociais, a importância da representatividade e seus benefícios",
-    },
-  ];
+
+  const [posts, setPosts] = useState([]);
+  const [searched, setSearched] = useState('');
+
+  const handleSearchChange = (value) => {
+      setSearched(value);
+  };
+  
+  useEffect(() => {
+    const fetchData = async () => {
+        try {
+            const response = await api.get('/tag/tag');
+            const postList = response.data.data;
+            setPosts(postList);
+        } catch (err) {
+            console.error(err);
+        }
+    };
+    fetchData();
+  }, []);
 
   return (
     <>
@@ -49,10 +48,38 @@ function Tags() {
               PageTitle="Tags"
               PageSubtitle="Aqui, você pode explorar uma variedade de tópicos que sejam de seu interesse, filtrando suas pesquisas através de tags relevantes e envolventes."
             />
-            <FilterBar buttons={buttons} />
-            <PostContainer>
-                <TagCard posts={posts}/>
-            </PostContainer>
+            <FilterBar buttons={buttons} onSearchChange={handleSearchChange}/>
+              {searched !== '' ? (
+              <PostContainer>
+                {posts
+                .filter((post) => post.TagName.toLowerCase().includes(searched.toLowerCase()))
+                .map((post) => (
+                  <PostCardContainer key={post.TagID}>
+                      <Column>
+                      <PostTagContainer>
+                              <PostTag>#{post.TagName}</PostTag>
+                            </PostTagContainer>
+                            <PostTitle>{post.TagName}</PostTitle>
+                            <PostContent>{post.TagDescription}</PostContent>
+                      </Column>
+                    </PostCardContainer>
+                ))}
+              </PostContainer>
+              ) : (
+              <PostContainer>
+                {posts.map((post) => (
+                  <PostCardContainer key={post.TagID}>
+                    <Column>
+                    <PostTagContainer>
+                            <PostTag>#{post.TagName}</PostTag>
+                          </PostTagContainer>
+                          <PostTitle>{post.TagName}</PostTitle>
+                          <PostContent>{post.TagDescription}</PostContent>
+                    </Column>
+                  </PostCardContainer>
+                ))}
+              </PostContainer>
+              )}
           </TagPageGrid>
       </TagPageContainer>
     </Grid>

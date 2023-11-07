@@ -8,7 +8,7 @@ import { InputStyle, BotaoConfirmar } from './InputCadastro.jsx'
 import { Button } from '@chakra-ui/react'
 
 import { useNavigate } from "react-router-dom";
-import { baseUrl } from "../../services/api";
+import { api, baseUrl } from "../../services/api";
 import axios from "axios";
 
 function InputCadastro(){
@@ -27,7 +27,7 @@ function InputCadastro(){
         if(formData.senha !== formData.confirmSenha){
             alert("Senhas não coincidem")
         } else{
-            const response = await axios.post(`${baseUrl}/user/create`, formData);
+            const response = await api.post(`/user/create`, formData);
 
             if(response.data.success) {
                 alert('Usuario cadastrado')
