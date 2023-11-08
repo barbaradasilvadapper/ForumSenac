@@ -9,7 +9,7 @@ function PostCard( props ){
     };
     return(
     <>
-    <button onClick={(e) => { e.preventDefault(); goPostDetails(props.PostID);}}>
+    <button style={{textAlign: "left"}} onClick={(e) => { e.preventDefault(); goPostDetails(props.PostID);}}>
         <PostCardContainer>
             <IdContainer>
                 <Avatar src={props.UserPhoto} backgroundColor="#262D34"/>

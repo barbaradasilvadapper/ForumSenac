@@ -4,7 +4,7 @@ export const PostCardContainer = styled.div`
     background-color: #696969;
     border: 1px solid #696969;
     border-radius: 20px 0px 0px 20px;
-    width: 75%;
+    width: 60%;
     height: fit-content;
     margin-bottom: 3vh;
     padding: 4vh;
