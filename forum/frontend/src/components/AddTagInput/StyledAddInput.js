@@ -20,5 +20,5 @@ export const PostTag = styled.button`
     background-color: #51575D;
     border: 1px solid #51575D;
     border-radius: 5px;
-    font-size: 10px;
+    font-size: 12px;
 `

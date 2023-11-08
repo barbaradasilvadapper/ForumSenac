@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 import { Grid } from "../../StyledGlobal";
 import FilterBar from "../../components/FilterBar/FilterBar"
@@ -15,7 +15,7 @@ import MonsterReport from "../../components/MonsterReport/MonterReport";
 import { useEffect, useState } from "react";
 import { api } from "../../services/api";
 
-function Home(){
+function Home( props ){
 
     const buttons = [
         { label: 'Recente', icon: RecentesIcon},
@@ -63,8 +63,9 @@ function Home(){
                     {posts
                     .filter((post) => post.PostName.toLowerCase().includes(searched.toLowerCase()))
                     .map((post) => (
-                        <PostCard 
+                        <PostCard
                             key={post.PostID}
+                            PostID={post.PostID}
                             UserPhoto={post.UserPhoto}
                             Username={post.UserName}
                             TimePosted={`Há ${post.PublishedTime}`}
@@ -81,6 +82,7 @@ function Home(){
                     {posts.map((post) => (
                         <PostCard 
                             key={post.PostID}
+                            PostID={post.PostID}
                             UserPhoto={post.UserPhoto}
                             Username={post.UserName}
                             TimePosted={`Há ${post.PublishedTime}`}

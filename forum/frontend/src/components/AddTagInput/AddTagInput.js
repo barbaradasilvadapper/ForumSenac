@@ -58,8 +58,8 @@ function AddTagInput( props ){
             border: "1px solid #262d34eb",
             borderRadius: "10px",
             padding: "3vh",
-            gap: "3vh",
-            width: "55vh",
+            gap: "1vh",
+            width: "50vh",
             position: 'absolute',
             zIndex: '10',
         }}
@@ -104,6 +104,7 @@ function AddTagInput( props ){
                 display: "flex",
                 flexWrap: "wrap",
                 justifyContent: "space-between",
+                fontSize: "15px",
                 height: "15vh"
             }}
         >

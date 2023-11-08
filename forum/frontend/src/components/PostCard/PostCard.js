@@ -1,9 +1,15 @@
-import { PostContainer } from "../../pages/Home/StyledHome";
+import { Link, useNavigate } from "react-router-dom";
 import { Avatar, Column, IdContainer, PostCardContainer, PostContent, PostTag, PostTagContainer, PostTitle, Time } from "./StyledPostCard"
 
-function PostCard(props){
+function PostCard( props ){
+    const navigate = useNavigate();
+
+    const goPostDetails = (post_id) => {
+        navigate(`/PostDetails/${post_id}`);
+    };
     return(
     <>
+    <button onClick={(e) => { e.preventDefault(); goPostDetails(props.PostID);}}>
         <PostCardContainer>
             <IdContainer>
                 <Avatar src={props.UserPhoto} backgroundColor="#262D34"/>
@@ -32,6 +38,7 @@ function PostCard(props){
                 </PostTagContainer>
             </Column>
         </PostCardContainer>
+    </button>
     </>
     )
 }

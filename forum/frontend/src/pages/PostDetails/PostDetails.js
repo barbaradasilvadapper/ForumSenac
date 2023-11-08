@@ -1,24 +1,33 @@
 import { Grid } from "../../StyledGlobal"
-import FilterBar from "../../components/FilterBar/FilterBar"
 import Header from "../../components/Header/Header"
-// import MainDashboard from "../../components/MainDashboard/MainDashboard"
 import Menu from "../../components/Menu/Menu"
-import PageIntro from "../../components/PageIntroduction/PageIntro"
-import PostCard from "../../components/PostCard/PostCard"
-import { DisabledStatus, HomeContainer, HomeGrid, PostContainer } from "./PostDetails.jsx"
+import { DisabledStatus, HomeContainer, HomeGrid, PostContainer, Avatar, PostCardContainer, PostTitle, PageHead } from "./StyledPostDetails.jsx"
+import BackArrowIcon from "../assets/BackArrow.png"
 
-import RecentesIcon from "../assets/Recente.png"
-import ResolvidosIcon from "../assets/Resolvidos.png"
 import ProfilePhoto from "../assets/Monster.svg"
-import CardProgress from "../../components/CardProgress/CardProgress.js"
 import AnswerCard from "../../components/AnswerCard/AnswerCard"
-import { PostCardContainer } from "./PostDetails.jsx"
+import { BackButton, BackIcon } from "../CreatePost/StyledCreatePost.jsx"
+import { useParams } from "react-router-dom"
+import { useEffect, useState } from "react"
+import { api } from "../../services/api.js"
 
 function PostDetails(){
-    const buttons = [
-        { label: 'Recente', icon: RecentesIcon},
-        { label: 'Respondidos', icon: ResolvidosIcon },
-    ];
+    const {postID} = useParams([]);
+    const [ post, setPost ] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+
+        try{
+            const response = await api.post("/post/post/detail", {postID: postID});
+            const postList = response.data.data[0];
+            setPost(postList);
+        } catch (err) {
+            console.error(err);
+        }};
+        fetchData();
+    }, []);
+
     return(
         <>
         <HomeContainer>
@@ -26,10 +35,15 @@ function PostDetails(){
             <Header />
             <Menu />
             <HomeGrid>
-                <PageIntro PageTitle="Suas propostas" PageSubtitle="A cada proposta desvendamos um pouco mais o mistério que é a busca por intervenções que realizem uma verdadeira mudança em nossa sociedade!"/>
-                <PostCardContainer></PostCardContainer>
-                <FilterBar buttons={buttons}/>
-                <DisabledStatus/>
+                <PageHead>
+                    <BackButton>
+                        <BackIcon src={BackArrowIcon}/>
+                    </BackButton>
+                    <Avatar src={post.UserPhoto}/>
+                    <PostCardContainer>
+                        <PostTitle>{post.PostName}</PostTitle>
+                    </PostCardContainer>
+                </PageHead>
                 <PostContainer>
                     <AnswerCard
                         UserPhoto={ProfilePhoto}

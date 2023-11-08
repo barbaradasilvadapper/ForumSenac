@@ -42,13 +42,14 @@ function CreatePost(){
         const userID = parseInt(localStorage.getItem('user'))
         const data = {
           UserID: userID,
-          Photo: photo,
+          Photo: '',
           PostName: title,
           PostDescription: content,
           Tag1: tag1,
           Tag2: tag2,
           Tag3: tag3
         }
+        console.log(data)
         
         try {
             const response = await api.post('/post/post/create', data);
