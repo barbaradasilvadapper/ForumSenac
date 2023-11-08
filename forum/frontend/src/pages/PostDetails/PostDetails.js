@@ -50,6 +50,24 @@ function PostDetails(){
         fetchData();
     }, []);
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        
+        const userID = parseInt(localStorage.getItem('user'))
+        const data = {
+          UserID: userID,
+          PostID: postID,
+          CommentTitle: commentTitle,
+          Comment: comment,
+        }
+        try{
+            const response = await api.post("/comment/create/comment/create", data);
+            console.log('Post criado com sucesso:', response.data);
+        } catch (error) {
+            console.error('Erro ao criar o post:', error);
+        }
+    };
+
     return(
         <>
         <HomeContainer>
@@ -80,7 +98,7 @@ function PostDetails(){
                         <Input value={commentTitle} onChange={(e) => setCommentTitle(e.target.value)} placeholder="Digite aqui o título do seu comentário..."/>
                         <FieldTitle>Sua proposta</FieldTitle>
                         <Textarea value={comment} onChange={(e) => setComment(e.target.value)} placeholder="Digite aqui o título..."/>
-                        <SubmitButton>Postar</SubmitButton>
+                        <SubmitButton type="submit" onClick={handleSubmit}>Postar</SubmitButton>
                     <PostTitle>Veja outras propostas</PostTitle>
                 </PostContainer>
                 <CommentContainer>
