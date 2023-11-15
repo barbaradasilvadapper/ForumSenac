@@ -3,9 +3,8 @@ const { Router } = require('express');
 // Instanciar o Router na variável router
 const router = Router();
 // Importar as funções (processamento da requisição) do controller
-const { listPost, createPost } = require('../controllers/postController');
+const { listComment } = require('../controllers/commentController');
 
-router.get('/post', listPost);
-router.post('/post/create', createPost);
+router.post('/comment', listComment);
 
 module.exports = router;

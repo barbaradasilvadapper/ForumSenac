@@ -49,7 +49,6 @@ function CreatePost(){
           Tag2: tag2,
           Tag3: tag3
         }
-        console.log(data)
         
         try {
             const response = await api.post('/post/post/create', data);

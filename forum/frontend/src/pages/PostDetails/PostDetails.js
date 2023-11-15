@@ -1,19 +1,28 @@
 import { Grid } from "../../StyledGlobal"
 import Header from "../../components/Header/Header"
 import Menu from "../../components/Menu/Menu"
-import { DisabledStatus, HomeContainer, HomeGrid, PostContainer, Avatar, PostCardContainer, PostTitle, PageHead } from "./StyledPostDetails.jsx"
+import { HomeContainer, HomeGrid, PostContainer, Avatar, PostTitle, PageHead, PostContent, Time, CommentContainer, HeadInfo, User, PostTagContainer, PostTag, Textarea, Input, FieldTitle, SubmitButton } from "./StyledPostDetails.jsx"
 import BackArrowIcon from "../assets/BackArrow.png"
 
 import ProfilePhoto from "../assets/Monster.svg"
 import AnswerCard from "../../components/AnswerCard/AnswerCard"
 import { BackButton, BackIcon } from "../CreatePost/StyledCreatePost.jsx"
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { api } from "../../services/api.js"
 
 function PostDetails(){
     const {postID} = useParams([]);
     const [ post, setPost ] = useState([]);
+    const [ comments, setComments ] = useState([]);
+    const [commentTitle, setCommentTitle] = useState('');
+    const [comment, setComment] = useState('');
+
+    const navigate = useNavigate();
+
+    const goBack = () => {
+        navigate(-1);
+    }
 
     useEffect(() => {
         const fetchData = async () => {
@@ -28,6 +37,37 @@ function PostDetails(){
         fetchData();
     }, []);
 
+    useEffect(() => {
+        const fetchData = async () => {
+
+        try{
+            const response = await api.post("/comment/comment", {postID: postID});
+            const commentList = response.data.data;
+            setComments(commentList);
+        } catch (err) {
+            console.error(err);
+        }};
+        fetchData();
+    }, []);
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        
+        const userID = parseInt(localStorage.getItem('user'))
+        const data = {
+          UserID: userID,
+          PostID: postID,
+          CommentTitle: commentTitle,
+          Comment: comment,
+        }
+        try{
+            const response = await api.post("/comment/create/comment/create", data);
+            console.log('Post criado com sucesso:', response.data);
+        } catch (error) {
+            console.error('Erro ao criar o post:', error);
+        }
+    };
+
     return(
         <>
         <HomeContainer>
@@ -36,59 +76,47 @@ function PostDetails(){
             <Menu />
             <HomeGrid>
                 <PageHead>
-                    <BackButton>
+                    <BackButton onClick={goBack}>
                         <BackIcon src={BackArrowIcon}/>
                     </BackButton>
                     <Avatar src={post.UserPhoto}/>
-                    <PostCardContainer>
-                        <PostTitle>{post.PostName}</PostTitle>
-                    </PostCardContainer>
+                    <HeadInfo>
+                        <User>{post.UserName}</User>
+                        <Time>{post.PublishedTime}</Time>
+                    </HeadInfo>
                 </PageHead>
                 <PostContainer>
-                    <AnswerCard
-                        UserPhoto={ProfilePhoto}
-                        Username="Julia Yume"
-                        TimePosted="5 min"
-                        PostTitle="O papel das políticas públicas e da legislação trabalhista na diversidade e inclusão:"
-                        PostContent="Quais medidas podem ser implementadas para incentivar a inclusão de trabalhadores marginalizados no mercado de trabalho e garantir a igualdade de oportunidades?"
-                        PostTag1="políticas"
-                        PostTag2="trabalho"
-                        PostTag3="oportunidades"
-                    />
-                    <AnswerCard
-                        UserPhoto={ProfilePhoto}
-                        Username="Bárbara Dapper"
-                        TimePosted="5 min"
-                        PostTitle="O papel das políticas públicas e da legislação trabalhista na diversidade e inclusão:"
-                        PostContent="Quais medidas podem ser implementadas para incentivar a inclusão de trabalhadores marginalizados no mercado de trabalho e garantir a igualdade de oportunidades?"
-                        PostTag1="políticas"
-                        PostTag2="trabalho"
-                        PostTag3="oportunidades"
-                    />
-                    <AnswerCard
-                        UserPhoto={ProfilePhoto}
-                        Username="Gabriela Munari"
-                        TimePosted="5 min"
-                        PostTitle="O papel das políticas públicas e da legislação trabalhista na diversidade e inclusão:"
-                        PostContent="Quais medidas podem ser implementadas para incentivar a inclusão de trabalhadores marginalizados no mercado de trabalho e garantir a igualdade de oportunidades?"
-                        PostTag1="políticas"
-                        PostTag2="trabalho"
-                        PostTag3="oportunidades"
-                    />
-
-                    <AnswerCard
-                        UserPhoto={ProfilePhoto}
-                        Username="Bernardo Haisser"
-                        TimePosted="5 min"
-                        PostTitle="O papel das políticas públicas e da legislação trabalhista na diversidade e inclusão:"
-                        PostContent="Quais medidas podem ser implementadas para incentivar a inclusão de trabalhadores marginalizados no mercado de trabalho e garantir a igualdade de oportunidades?"
-                        PostTag1="políticas"
-                        PostTag2="trabalho"
-                        PostTag3="oportunidades"
-                    />
+                    <PostTitle>{post.PostName}</PostTitle>
+                    <PostContent>{post.PostDescription}</PostContent>
+                    <PostTagContainer>
+                        <PostTag>{post.TagName1}</PostTag>
+                        <PostTag>{post.TagName2}</PostTag>
+                        <PostTag>{post.TagName3}</PostTag>
+                    </PostTagContainer>
+                    <PostTitle>Compartilhe sua proposta</PostTitle>
+                        <FieldTitle>Título da proposta</FieldTitle>
+                        <Input value={commentTitle} onChange={(e) => setCommentTitle(e.target.value)} placeholder="Digite aqui o título do seu comentário..."/>
+                        <FieldTitle>Sua proposta</FieldTitle>
+                        <Textarea value={comment} onChange={(e) => setComment(e.target.value)} placeholder="Digite aqui o título..."/>
+                        <SubmitButton type="submit" onClick={handleSubmit}>Postar</SubmitButton>
+                    <PostTitle>Veja outras propostas</PostTitle>
                 </PostContainer>
-                <DisabledStatus/>
-
+                <CommentContainer>
+                {comments !== '' ? (
+                    comments.map((comment) => (
+                    <AnswerCard
+                        key={comment.CommentID}
+                        UserPhoto={ProfilePhoto}
+                        Username={comment.UserName}
+                        TimePosted={comment.PublishedTime}
+                        PostTitle={comment.CommentTitle}
+                        PostContent={comment.Comment}
+                    />
+                    ))
+                ) : (
+                    <div>No comments to display</div>
+                )}
+                </CommentContainer>
             </HomeGrid>
         </Grid>
         </HomeContainer>
